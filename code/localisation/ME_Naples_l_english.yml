@@ -479,6 +479,9 @@
  nap_subject_tribute: "Subject Tribute"
  nap_subject_slaves: "Imported Greek Serfs"
  nap_defender_christianity: "Defender of Christianity"
+ nap_helped_rebellion: "Helped the Rebellion"
+ nap_helped_rebellion_war: "Helped the Rebellion war"
+ nap_denied_help: "Denied Help"
 
  #Event
  ME_Naples_Events.EVTNAME1: "The Fate of Naples"

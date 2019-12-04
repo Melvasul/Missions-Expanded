@@ -1,6 +1,6 @@
 namespace = ME_Naples_Events
 
-country_event = {
+country_event = { #The Fate of Naples
 	id = ME_Naples_Events.1
 	title = ME_Naples_Events.EVTNAME1
 	desc = ME_Naples_Events.EVTDESC1
@@ -8,14 +8,7 @@ country_event = {
 
 	fire_only_once = yes
 
-	trigger = {
-		tag = NAP
-		owns = 121
-	}
-
-	mean_time_to_happen = {
-		months = 24
-	}
+	is_triggered_only = yes
 
 	option = {
 		name = ME_Naples_Events1.EVTOPT1
@@ -113,6 +106,9 @@ country_event = { # For France
 			}
 		}
 		121 = {
+			if = {
+				owned_by = FROM
+			}
 			infantry = FROM
 			infantry = FROM
 			infantry = FROM
@@ -225,6 +221,9 @@ country_event = { # For the Italian Nations
 			}
 		}
 		121 = {
+			if = {
+				owned_by = FROM
+			}
 			infantry = NAP
 			infantry = NAP
 			infantry = NAP
@@ -243,6 +242,11 @@ country_event = { # For the Italian Nations
 		add_opinion = {
 			who = NAP
 			modifier = nap_helped_rebellion_war
+		}
+		add_trust = {
+			who = NAP
+			value = 25
+			mutual = yes
 		}
 		NAP = {
 			add_opinion = {
@@ -308,6 +312,10 @@ country_event = { #Naples stands alone
 				type = naples_rebels
 				size = 3
 			}
+		}
+		add_spy_network_in = {
+			who = ARA
+			value = 50
 		}
 	}
 }
