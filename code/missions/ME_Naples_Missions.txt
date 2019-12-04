@@ -386,7 +386,7 @@ naples_missions_2 = {
 	has_country_shield = yes
 
 	nap_quest_queen = {
-		icon = mission_monarch_in_throne_room
+		icon = me_mission_italy_pizza
 		required_missions = {}
 		position = 1
 		
@@ -395,16 +395,12 @@ naples_missions_2 = {
 			num_of_owned_provinces_with = {
 				value = 3
 				owned_by = ROOT
-				limit = {
-					region = italy_region
-				}
+				region = italy_region
 			}
 			num_of_owned_provinces_with = {
 				value = 3
 				owned_by = ROOT
-				limit = {
-					region = egypt_region
-				}
+				region = egypt_region
 			}
 			1293 = { #Sevillla
 				trade_share = {
