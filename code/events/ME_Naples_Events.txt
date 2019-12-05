@@ -11,7 +11,7 @@ country_event = { #The Fate of Naples
 	option = {
 		name = ME_Naples_Events1.EVTOPT1
 		ai_chance = {
-			factor = 33
+			factor = 50
 			modifier = {
 				factor = 3
 				has_opinion = {
@@ -23,7 +23,7 @@ country_event = { #The Fate of Naples
 		FRA = {
 			country_event = {
 				id = ME_Naples_Events.2
-				days = 30
+				days = 60
 			}
 		}
 
@@ -32,7 +32,7 @@ country_event = { #The Fate of Naples
 	option = {
 		name = ME_Naples_Events1.EVTOPT2
 		ai_chance = {
-			factor = 33
+			factor = 50
 		}
 		random_country = {
 			limit = {
@@ -51,18 +51,8 @@ country_event = { #The Fate of Naples
 			}
 			country_event = { 
 				id = ME_Naples_Events.3
-				days = 30
+				days = 60
 			}
-		}
-	}
-	option = {
-		name = ME_Naples_Events1.EVTOPT3
-		ai_chance = {
-			factor = 33
-		}
-		country_event = {
-			id = ME_Naples_Events.4
-			days = 30
 		}
 	}
 }
@@ -136,6 +126,7 @@ country_event = { # For France
 						value = 100
 					}
 					is_at_war = no
+					is_rival = ARA
 				}
 			}
 		}
@@ -174,6 +165,10 @@ country_event = { # For France
 		name = ME_Naples_Events2.EVTOPT3
 		ai_chance = {
 			factor = 33
+			modifier = {
+				factor = 3
+				alliance_with = ARA
+			}
 		}
 		random_country = {
 			limit = {
@@ -192,7 +187,7 @@ country_event = { # For France
 			}
 			country_event = { 
 				id = ME_Naples_Events.3 
-				days = 30
+				days = 60
 			}
 		}
 		add_opinion = {
@@ -220,6 +215,10 @@ country_event = { # For the Italian Nations
 		name = ME_Naples_Events3.EVTOPT1
 		ai_chance = {
 			factor = 33
+			modifier = {
+				factor = 3
+
+			}
 		}
 		ROOT = {
 			add_treasury = -100
@@ -264,6 +263,16 @@ country_event = { # For the Italian Nations
 		name = ME_Naples_Events3.EVTOPT2
 		ai_chance = {
 			factor = 33
+			modifier = {
+				factor = 3
+				OR = {
+					has_opinion = {
+						who = NAP
+						value = 100
+					}
+					is_at_war = no
+				}
+			}
 		}
 		add_historical_rival = ARA
 		add_historical_friend = NAP
@@ -300,6 +309,13 @@ country_event = { # For the Italian Nations
 			factor = 33
 			modifier = {
 				factor = 3
+				modifier = {
+					factor = 0
+					army_strength = {
+						who = ARA
+						value = 0.50
+					}
+				}
 			}
 		}
 		add_opinion = {
@@ -309,7 +325,7 @@ country_event = { # For the Italian Nations
 		NAP = {
 			country_event = {
 				id = ME_Naples_Events.4
-				days = 30
+				days = 60
 			}
 			add_opinion = {
 				who = ROOT
@@ -350,7 +366,7 @@ country_event = { #Naples stands alone
 	}
 }
 
-country_event = { #Friends or Foes
+country_event = { #Restoring the Glory of Greece
 	id = ME_Naples_Events.5
 	title = ME_Naples_Events.EVTNAME5
 	desc = ME_Naples_Events.EVTDESC5
@@ -360,83 +376,6 @@ country_event = { #Friends or Foes
 	
 	option = {
 		name = ME_Naples_Events5.EVTOPT1
-		
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				NOT = {
-					num_of_free_diplomatic_relations = 1
-				}
-			}
-		}
-		
-		PAP = {
-			add_historical_friend = ROOT
-		}
-		add_historical_friend = PAP
-		125 = { #Palermo
-			if = {
-				owned_by = ROOT
-			}
-			add_cardinal = yes
-		}
-		emilia_romagna_area = {
-			limit = {
-				owned_by = PAP
-				NOT = {
-					is_core = ROOT
-				}
-			}
-			add_core = NAP
-			cede_province = NAP
-			remove_core = PAP
-		}
-		tuscany_area = {
-			limit = {
-				NOT = { 
-					owned_by = ROOT
-				}
-				NOT = { 
-					is_core = ROOT 
-				}
-			}
-			add_permanent_claim = ROOT
-		}
-	}
-
-	option = {
-		name = ME_Naples_Events5.EVTOPT2
-
-		ai_chance = {
-			factor = 50
-		}
-		add_historical_rival = PAP
-		hidden_effect = {
-		every_province = {
-				limit = {
-					owned_by = PAP
-					region = italy_region
-				}
-				add_permanent_claim = ROOT
-			}
-		}
-		create_general = {
-			tradition = 50
-		}
-	}
-}
-
-country_event = { #Restoring the Glory of Greece
-	id = ME_Naples_Events.6
-	title = ME_Naples_Events.EVTNAME6
-	desc = ME_Naples_Events.EVTDESC6
-	picture = HARBOUR_eventPicture
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = ME_Naples_Events6.EVTOPT1
 		
 		ai_chance = {
 			factor = 50
@@ -516,7 +455,7 @@ country_event = { #Restoring the Glory of Greece
 	}
 
 	option = {
-		name = ME_Naples_Events6.EVTOPT2
+		name = ME_Naples_Events5.EVTOPT2
 
 		ai_chance = {
 			factor = 50
@@ -538,18 +477,25 @@ country_event = { #Restoring the Glory of Greece
 }
 
 country_event = { #The Throne of Provence for Provence
-	id = ME_Naples_Events.7
-	title = ME_Naples_Events.EVTNAME7
-	desc = ME_Naples_Events.EVTDESC7
+	id = ME_Naples_Events.6
+	title = ME_Naples_Events.EVTNAME6
+	desc = ME_Naples_Events.EVTDESC6
 	picture = HARBOUR_eventPicture
 	
 	is_triggered_only = yes
 
 	option = {
-		name = ME_Naples_Events7.EVTOPT1
+		name = ME_Naples_Events6.EVTOPT1
 
 		ai_chance = {
 			factor = 50
+			modifier = {
+				factor = 2
+				army_strength = {
+					who = NAP
+					value = 0.50
+				}
+			}
 		}
 		FROM = {
 			if = {
@@ -568,10 +514,14 @@ country_event = { #The Throne of Provence for Provence
 	}
 
 	option = {
-		name = ME_Naples_Events7.EVTOPT2
+		name = ME_Naples_Events6.EVTOPT2
 
 		ai_chance = {
 			factor = 50
+			modifier = {
+				factor = 0
+				is_subject = yes
+			}
 		}
 		add_casus_belli = {
 			type = cb_insult
@@ -588,15 +538,15 @@ country_event = { #The Throne of Provence for Provence
 }
 
 country_event = { #The Crown of Jerusalem
-	id = ME_Naples_Events.8
-	title = ME_Naples_Events.EVTNAME8
-	desc = ME_Naples_Events.EVTDESC8
+	id = ME_Naples_Events.7
+	title = ME_Naples_Events.EVTNAME7
+	desc = ME_Naples_Events.EVTDESC7
 	picture = HARBOUR_eventPicture
 	
 	is_triggered_only = yes
 	
 	option = {
-		name = ME_Naples_Events8.EVTOPT1
+		name = ME_Naples_Events7.EVTOPT1
 		
 		ai_chance = {
 			factor = 50
@@ -625,7 +575,7 @@ country_event = { #The Crown of Jerusalem
 		}
 	}
 	option = {
-		name = ME_Naples_Events8.EVTOPT2
+		name = ME_Naples_Events7.EVTOPT2
 
 		ai_chance = {
 			factor = 50

@@ -43,21 +43,93 @@ naples_missions_1 = {
 		}
 		position = 2
 		trigger = {
-			has_opinion = {
-				who = PAP
-				value = 170
-			}
-			PAP = {
-				has_opinion = {
-					who = ROOT
-					value = 170
+			OR = {
+				AND = {
+					alliance_with = PAP
+					has_opinion = {
+						who = PAP
+						value = 170
+					}
+					PAP = {
+						has_opinion = {
+							who = ROOT
+							value = 170
+						}
+					}
+				}
+				AND = {
+					is_rival = PAP
+					NOT = {
+						has_opinion = {
+							who = PAP
+							value = -100
+						}
+					}
+					NOT = {
+						PAP = {
+							has_opinion = {
+								who = ROOT
+								value = -100
+							}
+							is_rival = ROOT
+						}
+					}
 				}
 			}
 		}
 		effect = {
-			country_event = { 
-				id = ME_Naples_Events.5
-				months = 1
+			if = {
+				limit = {
+					alliance_with = PAP
+				}
+				PAP = {
+					add_historical_friend = ROOT
+				}
+				add_historical_friend = PAP
+				125 = { #Palermo
+					if = {
+						owned_by = ROOT
+					}
+					add_cardinal = yes
+				}
+				emilia_romagna_area = {
+					limit = {
+						owned_by = PAP
+						NOT = {
+							is_core = ROOT
+						}
+					}
+					add_core = NAP
+					cede_province = NAP
+					remove_core = PAP
+				}
+				tuscany_area = {
+					limit = {
+						NOT = { 
+							owned_by = ROOT
+						}
+						NOT = { 
+							is_core = ROOT 
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			else_if = {
+				limit = {
+					is_rival = PAP
+				}
+				add_historical_rival = PAP
+				every_province = {
+					limit = {
+						owned_by = PAP
+						region = italy_region
+					}
+					add_permanent_claim = ROOT
+				}
+				create_general = {
+					tradition = 50
+				}
 			}
 		}		
 	}
@@ -692,7 +764,7 @@ naples_missions_3 = {
 	has_country_shield = yes
 
 	nap_freedom = {
-		icon = mission_build_up_to_force_limit
+		icon = me_mission_italy_army1
 		required_missions = { }
 		position = 1
 		trigger = {
@@ -858,7 +930,7 @@ naples_missions_3 = {
 				add_permanent_claim = ROOT
 			}
 			country_event = { 
-					id = ME_Naples_Events.8
+					id = ME_Naples_Events.7
 				}
 		}
 	}
@@ -1049,7 +1121,7 @@ naples_missions_3 = {
 	}
 
 	nap_reign_italy = {
-		icon = mission_unite_home_region
+		icon = me_mission_italy_italy_region
 		required_missions = {
 		}
 		provinces_to_highlight = {
@@ -1286,7 +1358,7 @@ naples_missions_4 = {
 					}
 				}
 				country_event = { 
-					id = ME_Naples_Events.6
+					id = ME_Naples_Events.5
 				}
 			}
 			thrace_area = {
@@ -1377,7 +1449,7 @@ naples_missions_4 = {
 				}
 				PRO = {
 					country_event = {
-						id = ME_Naples_Events.7
+						id = ME_Naples_Events.6
 						months = 3
 					}
 				}
@@ -1465,7 +1537,7 @@ naples_missions_5 = {
 	has_country_shield = yes
 
 	nap_university = {
-		icon = mission_early_game_buildings
+		icon = me_mission_italy_university_nap
 		required_missions = { }
 		provinces_to_highlight = {
 			province_id = 121
@@ -1578,9 +1650,11 @@ naples_missions_5 = {
 					add_devastation = -1
 				}
 			}
-			add_country_modifier = {
-				name = nap_development3
-				duration = -1
+			calabria_area = {
+				add_province_modifier = {
+					name = nap_development3
+					duration = -1
+				}
 			}
 		}
 	}
@@ -1600,10 +1674,6 @@ naples_missions_5 = {
 			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = nap_development4
-				duration = -1
-			}
 			every_province = {
 				limit = {
 					area = apulia_area
@@ -1617,6 +1687,12 @@ naples_missions_5 = {
 				}
 				else = {
 					add_devastation = -1
+				}
+			}
+			apulia_area = {
+				add_province_modifier = {
+					name = nap_development4
+					duration = -1
 				}
 			}
 		}
@@ -1637,23 +1713,25 @@ naples_missions_5 = {
 			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = nap_development5
-				duration = -1
-			}
-		}
-		every_province = {
-			limit = {
-				area = sicily_area
-			}
-			if = {
-				limit = {
-					has_dlc = "Mandate of Heaven"
+			sicily_area = {
+				add_province_modifier = {
+					name = nap_development5
+					duration = -1
 				}
-				add_prosperity = 25
 			}
-			else = {
-				add_devastation = -1
+			every_province = {
+				limit = {
+					area = sicily_area
+				}
+				if = {
+					limit = {
+						has_dlc = "Mandate of Heaven"
+					}
+					add_prosperity = 25
+				}
+				else = {
+					add_devastation = -1
+				}
 			}
 		}
 	}
