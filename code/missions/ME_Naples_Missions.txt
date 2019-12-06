@@ -44,34 +44,38 @@ naples_missions_1 = {
 		position = 2
 		trigger = {
 			OR = {
-				AND = {
+				OR = {
 					alliance_with = PAP
-					has_opinion = {
-						who = PAP
-						value = 170
-					}
-					PAP = {
-						has_opinion = {
-							who = ROOT
-							value = 170
-						}
-					}
-				}
-				AND = {
-					is_rival = PAP
-					NOT = {
+					ALL = {
 						has_opinion = {
 							who = PAP
-							value = -100
+							value = 170
 						}
-					}
-					NOT = {
 						PAP = {
 							has_opinion = {
 								who = ROOT
+								value = 170
+							}
+						}
+					}
+				}
+				OR = {
+					is_rival = PAP
+					ALL = {
+						NOT = {
+							has_opinion = {
+								who = PAP
 								value = -100
 							}
-							is_rival = ROOT
+						}
+						NOT = {
+							PAP = {
+								has_opinion = {
+									who = ROOT
+									value = -100
+								}
+								is_rival = ROOT
+							}
 						}
 					}
 				}
