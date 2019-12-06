@@ -3,34 +3,13 @@ italian_minors_missions_1 = {
 	generic = no
 	ai = yes
 	potential = {
-		OR = {
-            tag = SAV 
-            tag = MFA
-            tag = MLO
-            tag = VEN
-            tag = MAN 
-            tag = FER
-            tag = GEN
-            tag = LUC
-            tag = LAN
-            tag = URB
-            tag = SIE
-            tag = NAP
-            tag = SIC
-            tag = TUS
-            tag = MOD
-            tag = PAR
-            tag = PIS
-            tag = SAR
-        }
+		is_italian_minor = yes
 	}
 	has_country_shield = yes
 
-	italian_minors_subjucate_piedmont = {
+	italian_minors_subjucate_piedmont = { # Piedmont must not have this
 		icon = me_mission_snowy_cannons
-		required_missions = {
-			italian_minors_italian_conquest
-		}
+		required_missions = {	}
 		provinces_to_highlight = {
 			OR = {
 				area = piedmont_area
@@ -39,7 +18,7 @@ italian_minors_missions_1 = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
-		position = 7
+		position = 2
 		trigger = {
 			piedmont_area = {
 				type = all
@@ -105,10 +84,9 @@ italian_minors_missions_1 = {
 		}
 	}
 
-	italian_minors_facing_medici = {
+	italian_minors_facing_medici = { # Florence/Tuscany must not have this
 		icon = me_mission_renaissance
-		required_missions = {
-		}
+		required_missions = {	}
 		provinces_to_highlight = {
 			OR = {
 				area = tuscany_area
@@ -117,7 +95,7 @@ italian_minors_missions_1 = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
-		position = 8
+		position = 3
 		trigger = {
 			tuscany_area = {
 				type = all
@@ -145,34 +123,13 @@ italian_minors_missions_2 = {
 	generic = no
 	ai = yes
 	potential = {
-		OR = {
-            tag = SAV 
-            tag = MFA
-            tag = MLO
-            tag = VEN
-            tag = MAN 
-            tag = FER
-            tag = GEN
-            tag = LUC
-            tag = LAN
-            tag = URB
-            tag = SIE
-            tag = NAP
-            tag = SIC
-            tag = TUS
-            tag = MOD
-            tag = PAR
-            tag = PIS
-            tag = SAR
-        }
+		is_italian_minor = yes
 	}
 	has_country_shield = yes
 
-	italian_minors_taming_milan = {
+	italian_minors_taming_milan = { # Milan must not have this
 		icon = mission_cannons_firing
-		required_missions = { 
-			italian_minors_italian_conquest
-		}
+		required_missions = {	}
 		provinces_to_highlight = {
 			OR = {
 				area = lombardy_area
@@ -181,7 +138,7 @@ italian_minors_missions_2 = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
-		position = 7
+		position = 2
 		trigger = {
 			lombardy_area = {
 				type = all
@@ -209,34 +166,14 @@ italian_minors_missions_3 = {
 	generic = no
 	ai = yes
 	potential = {
-		OR = {
-            tag = SAV 
-            tag = MFA
-            tag = MLO
-            tag = VEN
-            tag = MAN 
-            tag = FER
-            tag = GEN
-            tag = LUC
-            tag = LAN
-            tag = URB
-            tag = SIE
-            tag = NAP
-            tag = SIC
-            tag = TUS
-            tag = MOD
-            tag = PAR
-            tag = PIS
-            tag = SAR
-        }
+		is_italian_minor = yes
 	}
 	has_country_shield = yes
 
 	italian_minors_italian_conquest = {
 		icon = mission_rule_italy
-		required_missions = {
-		}
-		position = 6
+		required_missions = {	}
+		position = 1
 		trigger = {
 			manpower_percentage = 1
 			custom_trigger_tooltip = {
@@ -305,7 +242,7 @@ italian_minors_missions_3 = {
 				}
 				add_permanent_claim = ROOT
 			}
-            lazio_campania_area = {
+            naples_area = {
 				limit = {
 					NOT = { 
 						owned_by = ROOT
@@ -316,11 +253,9 @@ italian_minors_missions_3 = {
 		}
 	}
 
-	italian_minors_fall_lion = {
+	italian_minors_fall_lion = { # Venice must not have this
 		icon = me_mission_byzantium_fourth_crusade
-		required_missions = { 
-			italian_minors_italian_conquest
-		}
+		required_missions = {	}
 		provinces_to_highlight = {
 			OR = {
 				area = venetia_area
@@ -329,7 +264,7 @@ italian_minors_missions_3 = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
-		position = 7
+		position = 2
 		trigger = { 
 			venetia_area = {
 				type = all
@@ -352,8 +287,7 @@ italian_minors_missions_3 = {
 
 	italian_minors_reign_italy = {
 		icon = me_mission_italy_italy_region
-		required_missions = {
-		}
+		required_missions = {	}
 		provinces_to_highlight = {
 			OR = {
 				area = piedmont_area
@@ -368,7 +302,7 @@ italian_minors_missions_3 = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}		
-		position = 9
+		position = 4
 		trigger = {
 			piedmont_area = {
 				type = all
@@ -414,34 +348,13 @@ italian_minors_missions_4 = {
 	generic = no
 	ai = yes
 	potential = {
-		OR = {
-            tag = SAV 
-            tag = MFA
-            tag = MLO
-            tag = VEN
-            tag = MAN 
-            tag = FER
-            tag = GEN
-            tag = LUC
-            tag = LAN
-            tag = URB
-            tag = SIE
-            tag = NAP
-            tag = SIC
-            tag = TUS
-            tag = MOD
-            tag = PAR
-            tag = PIS
-            tag = SAR
-        }
+		is_italian_minor = yes
 	}
 	has_country_shield = yes
 
-	italian_minors_land_romagna = {
+	italian_minors_land_romagna = { # Ferrara must not have this
 		icon = mission_conquer_50_development
-		required_missions = {
-			italian_minors_italian_conquest
-		}
+		required_missions = {	}
 		provinces_to_highlight = {
 			OR = {
 				area = emilia_romagna_area
@@ -450,7 +363,7 @@ italian_minors_missions_4 = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
-		position = 7
+		position = 2
 		trigger = {
 			emilia_romagna_area = {
 				type = all
@@ -478,34 +391,13 @@ italian_minors_missions_5 = {
 	generic = no
 	ai = yes
 	potential = {
-		OR = {
-            tag = SAV 
-            tag = MFA
-            tag = MLO
-            tag = VEN
-            tag = MAN 
-            tag = FER
-            tag = GEN
-            tag = LUC
-            tag = LAN
-            tag = URB
-            tag = SIE
-            tag = NAP
-            tag = SIC
-            tag = TUS
-            tag = MOD
-            tag = PAR
-            tag = PIS
-            tag = SAR
-        }
+		is_italian_minor = yes
 	}
 	has_country_shield = yes
 
-	italian_minors_genoa = {
+	italian_minors_genoa = { # Genoa must not have this
 		icon = mission_conquer_50_development
-		required_missions = {
-			italian_minors_italian_conquest
-		}
+		required_missions = {	}
 		provinces_to_highlight = {
 			OR = {
 				area = liguria_area
@@ -514,7 +406,7 @@ italian_minors_missions_5 = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
-		position = 7
+		position = 2
 		trigger = {
 			liguria_area = {
 				type = all
@@ -535,22 +427,20 @@ italian_minors_missions_5 = {
 		}
 	}
 	
-    italian_minors_genoa = {
+    italian_minors_naples = { # Naples must not have this
 		icon = mission_conquer_50_development
-		required_missions = {
-			italian_minors_italian_conquest
-		}
+		required_missions = {	}
 		provinces_to_highlight = {
 			OR = {
-				area = lazio_campania_area
+				area = naples_area
 			}
 			NOT = { 
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
-		position = 8
+		position = 3
 		trigger = {
-			lazio_campania_area = {
+			naples_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -560,7 +450,7 @@ italian_minors_missions_5 = {
 				name = italian_minors_borboni
 				duration = 9125
 			}
-			lazio_campania_area = {
+			naples_area = {
 				add_province_modifier = {
 					name = italian_minors_napels
 					duration = -1

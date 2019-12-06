@@ -111,8 +111,11 @@ country_event = { # For France
 						who = NAP
 						value = 100
 					}
-					is_at_war = no
 					is_rival = ARA
+					army_strength = {
+						who = ARA
+						value = 0.75
+					}
 				}
 			}
 		}
@@ -183,7 +186,10 @@ country_event = { # For the Italian Nations
 			factor = 33
 			modifier = {
 				factor = 3
-
+				has_opinion = {
+					who = NAP
+					value = 100
+				}
 			}
 		}
 		ROOT = {
@@ -196,7 +202,7 @@ country_event = { # For the Italian Nations
 		}
 		121 = {
 			if = {
-				owned_by = FROM
+				owned_by = NAP
 			}
 			infantry = NAP
 			infantry = NAP
@@ -222,6 +228,19 @@ country_event = { # For the Italian Nations
 						value = 100
 					}
 					is_at_war = no
+					army_strength = {
+						who = ARA
+						value = 0.66
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					army_strength = {
+						who = ARA
+						value = 0.50
+					}
 				}
 			}
 		}
@@ -245,10 +264,12 @@ country_event = { # For the Italian Nations
 		ai_chance = {
 			factor = 33
 			modifier = {
-				factor = 0
-				army_strength = {
-					who = ARA
-					value = 0.50
+				factor = 3
+				NOT = {
+					army_strength = {
+						who = ARA
+						value = 0.50
+					}
 				}
 			}
 		}
