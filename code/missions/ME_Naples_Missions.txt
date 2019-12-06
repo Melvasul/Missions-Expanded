@@ -1020,10 +1020,13 @@ naples_missions_3 = {
 		position = 6
 		trigger = {
 			manpower_percentage = 1
-			all_country = {
-				OR = {
-					NOT = { army_size = ROOT }
-					NOT = { culture_group = latin }
+			custom_trigger_tooltip = {
+				tooltip = italian_conquest_tooltip
+				all_country = {
+					OR = {
+						NOT = { army_size = ROOT }
+						NOT = { culture_group = latin }
+					}
 				}
 			}
 		}
@@ -1187,6 +1190,86 @@ naples_missions_4 = {
 		tag = NAP
 	}
 	has_country_shield = yes
+
+	nap_provence = {
+		icon = me_mission_get_pu
+		required_missions = {
+		}
+		provinces_to_highlight = {
+		}
+		position = 1
+		trigger = {
+			if = {
+				limit = {
+					exists = PRO
+				}
+				diplomatic_reputation = 3
+				reverse_has_opinion = {
+					who = PRO
+					value = 100
+				}
+				has_opinion = {
+					who = PRO
+					value = 100
+				}
+				marriage_with = PRO
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = PRO
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = PRO
+				}
+				PRO = {
+					country_event = {
+						id = ME_Naples_Events.6
+						months = 3
+					}
+				}
+				loire_area = {
+					limit = {
+						NOT = { 
+							owned_by = ROOT 
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+				provence_area = {
+					limit = {
+						NOT = { 
+							owned_by = ROOT 
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						exists = PRO
+					}
+				}
+				every_province = {
+					limit = {
+						is_core = PRO
+						region = france_region
+					}
+					add_permanent_claim = ROOT
+				}
+				add_country_modifier = {
+					name = nap_provence_modifier
+					duration = 7300
+				}
+			}
+		}
+	}
 
 	nap_traversing_adriatic = {
 		icon = mission_invade_island
@@ -1411,86 +1494,6 @@ naples_missions_4 = {
 		}
 	}
 
-	nap_provence = {
-		icon = me_mission_get_pu
-		required_missions = {
-		}
-		provinces_to_highlight = {
-		}
-		position = 6
-		trigger = {
-			if = {
-				limit = {
-					exists = PRO
-				}
-				diplomatic_reputation = 3
-				reverse_has_opinion = {
-					who = PRO
-					value = 100
-				}
-				has_opinion = {
-					who = PRO
-					value = 100
-				}
-				marriage_with = PRO
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = PRO
-					}
-				}
-			}
-		}
-		effect = {
-			if = {
-				limit = {
-					exists = PRO
-				}
-				PRO = {
-					country_event = {
-						id = ME_Naples_Events.6
-						months = 3
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = {
-						exists = PRO
-					}
-				}
-				every_province = {
-					limit = {
-						is_core = PRO
-						region = france_region
-					}
-					add_permanent_claim = ROOT
-				}
-				add_country_modifier = {
-					name = nap_provence_modifier
-					duration = 7300
-				}
-			}
-			loire_area = {
-				limit = {
-					NOT = { 
-						owned_by = ROOT 
-					}
-				}
-				add_permanent_claim = ROOT
-			}
-			provence_area = {
-				limit = {
-					NOT = { 
-						owned_by = ROOT 
-					}
-				}
-				add_permanent_claim = ROOT
-			}
-		}
-	}
-
 	nap_land_romagna = {
 		icon = mission_conquer_50_development
 		required_missions = {
@@ -1544,15 +1547,15 @@ naples_missions_5 = {
 		}
 		position = 1
 		trigger = {
-			treasury = 100
+			treasury = 300
 			natural_scientist = 2
 			121 = {
 				owned_by = ROOT
-				development = 25
+				development = 27
 			}
 		}
 		effect = {
-			add_treasury = -100
+			add_treasury = -300
 			add_prestige = 25
 			add_country_modifier = {
 				name = nap_university_modifier
@@ -1583,11 +1586,11 @@ naples_missions_5 = {
 		}
 		position = 2
 		trigger = {
-			treasury = 100
-			artist = 2
+			treasury = 300
+			artist = 3
 		}
 		effect = {
-			add_treasury = -100
+			add_treasury = -300
 			add_legitimacy = 25
 			add_country_modifier = {
 				name = nap_royal_palace_modifier
@@ -1623,6 +1626,8 @@ naples_missions_5 = {
 		}
 		position = 3
 		trigger = {
+			stability = 2
+			treasury = 300
 			calabria_area = {
 				type = all
 				owned_by = ROOT
@@ -1633,8 +1638,8 @@ naples_missions_5 = {
 				limit = {
 					area = calabria_area
 				}
-					add_base_tax = 2
-					add_base_manpower = 2
+				add_base_tax = 2
+				add_base_manpower = 2
 			}
 			every_province = {
 				limit = {
@@ -1668,6 +1673,8 @@ naples_missions_5 = {
 		}
 		position = 4
 		trigger = {
+			stability = 2
+			treasury = 300
 			apulia_area = {
 				type = all
 				owned_by = ROOT

@@ -508,7 +508,7 @@
  ME_Naples_Events4.EVTOPT1: "Fine, I'll do by myself"
 
  ME_Naples_Events.EVTNAME5: "Restoring the Glory of Greece"
- ME_Naples_Events.EVTDESC5: "MISSING"
+ ME_Naples_Events.EVTDESC5: ""
  ME_Naples_Events5.EVTOPT1: "Recreate the Kingdom of Greece"
  ME_Naples_Events5.EVTOPT2: "Keep the lands for yourself"
 
@@ -521,6 +521,18 @@
  ME_Naples_Events.EVTDESC8: "The crown of Jerusalem, bestowed upon me by our belowed queen asks us to retake the most sacred places there could be on Earth, where our lord and saviour Christ immolated himself to redempt all of our sins, Deus Vult!"
  ME_Naples_Events7.EVTOPT1: "Crown yourself"
  ME_Naples_Events7.EVTOPT2: "Refuse the crown"
+
+ ME_Naples_Events.EVTNAME8: "[Root.GetName] will fund our rebellion"
+ ME_Naples_Events.EVTDESC8: ""
+ ME_Naples_Events8.EVTOPT1: "We would have hoped for something more"
+
+ ME_Naples_Events.EVTNAME9: "[Root.GetName] will help us with the war"
+ ME_Naples_Events.EVTDESC9: "We need to wait for the right time to strike"
+ ME_Naples_Events9.EVTOPT1: "Fine, I'll do by myself"
+
+ ME_Naples_Events.EVTNAME10: "[From.GetName] has decided to not support us"
+ ME_Naples_Events.EVTDESC10: "Despite our best efforts and hopes we were not able to persuade the [From.GetMonarch.Name] of [From.GetName], we may have better luck with one of our italian brothers!"
+ ME_Naples_Events10.EVTOPT1: "May them be damned!"
 
  naples_rebels_name: "Neapolitan rebels"
  naples_rebels_army: "Neapolitan rebels Liberating Army"
