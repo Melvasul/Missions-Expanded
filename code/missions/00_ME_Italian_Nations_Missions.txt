@@ -1,15 +1,15 @@
-italian_minors_missions_1 = {
+italian_nations_missions_1 = {
 	slot = 1
 	generic = no
 	ai = yes
 	potential = {
-		is_italian_minor = yes
+		is_italian_nation = yes
 	}
 	has_country_shield = yes
 
-	italian_minors_subjucate_piedmont = { # Piedmont must not have this
+	italian_nations_subjucate_piedmont = { # Piedmont must not have this
 		icon = me_mission_snowy_cannons
-		required_missions = {	}
+		required_missions = { italian_nations_italian_conquest	}
 		provinces_to_highlight = {
 			OR = {
 				area = piedmont_area
@@ -82,12 +82,12 @@ italian_minors_missions_1 = {
 					}
 				}
 				add_country_modifier = {
-					name = italian_minors_savoy
+					name = italian_nations_savoy
 					duration = 9125
 				}
 				piedmont_area = {
 					add_province_modifier = {
-						name = italian_minors_piedmont
+						name = italian_nations_piedmont
 						duration = -1
 					}
 				}
@@ -95,9 +95,9 @@ italian_minors_missions_1 = {
 		}
 	}
 
-	italian_minors_facing_medici = { # Florence/Tuscany must not have this
-		icon = me_mission_renaissance
-		required_missions = {	}
+	italian_nations_facing_medici = { # Florence/Tuscany must not have this
+		icon = me_mission_italy_florence
+		required_missions = { italian_nations_italian_conquest	}
 		provinces_to_highlight = {
 			OR = {
 				area = tuscany_area
@@ -128,12 +128,12 @@ italian_minors_missions_1 = {
 			}
 			else = {
 				add_country_modifier = {
-					name = italian_minors_medici
+					name = italian_nations_medici
 					duration = 9125
 				}
 				tuscany_area = {
 					add_province_modifier = {
-						name = italian_minors_tuscany
+						name = italian_nations_tuscany
 						duration = -1
 					}
 				}
@@ -143,18 +143,18 @@ italian_minors_missions_1 = {
 
 }
 
-italian_minors_missions_2 = {
+italian_nations_missions_2 = {
 	slot = 2
 	generic = no
 	ai = yes
 	potential = {
-		is_italian_minor = yes
+		is_italian_nation = yes
 	}
 	has_country_shield = yes
 
-	italian_minors_taming_milan = { # Milan must not have this
-		icon = mission_cannons_firing
-		required_missions = {	}
+	italian_nations_taming_milan = { # Milan must not have this
+		icon = me_mission_italy_milan
+		required_missions = { italian_nations_italian_conquest	}
 		provinces_to_highlight = {
 			OR = {
 				area = lombardy_area
@@ -182,12 +182,12 @@ italian_minors_missions_2 = {
 			}
 			else = {
 				add_country_modifier = {
-					name = italian_minors_sforza
+					name = italian_nations_sforza
 					duration = 9125
 				}
 				lombardy_area = {
 					add_province_modifier = {
-						name = italian_minors_lombardy
+						name = italian_nations_lombardy
 						duration = -1
 					}
 				}
@@ -197,26 +197,33 @@ italian_minors_missions_2 = {
 	
 }
 
-italian_minors_missions_3 = {
+italian_nations_missions_3 = {
 	slot = 3
 	generic = no
 	ai = yes
 	potential = {
-		is_italian_minor = yes
+		is_italian_nation = yes
 	}
 	has_country_shield = yes
 
-	italian_minors_italian_conquest = {
+	italian_nations_italian_conquest = {
 		icon = mission_rule_italy
 		required_missions = {	}
 		position = 1
 		trigger = {
 			manpower_percentage = 1
+			stability = 1
+			NOT = { 
+				war_exhaustion = 1
+			}
 			custom_trigger_tooltip = {
 				tooltip = italian_conquest_tooltip
 				all_country = {
 					OR = {
-						NOT = { army_size = ROOT }
+						army_strength = {
+							who = ROOT
+							value = 0.50
+						}
 						NOT = { culture_group = latin }
 					}
 				}
@@ -224,7 +231,7 @@ italian_minors_missions_3 = {
 		}
 		effect = {
 			add_country_modifier = {
-				name = italian_minors_italian_wars
+				name = italian_nations_italian_wars
 				duration = 9125
 			}
 			create_general = {
@@ -289,9 +296,9 @@ italian_minors_missions_3 = {
 		}
 	}
 
-	italian_minors_fall_lion = { # Venice must not have this
+	italian_nations_fall_lion = { # Venice must not have this
 		icon = me_mission_byzantium_fourth_crusade
-		required_missions = {	}
+		required_missions = { italian_nations_italian_conquest	}
 		provinces_to_highlight = {
 			OR = {
 				area = venetia_area
@@ -319,12 +326,12 @@ italian_minors_missions_3 = {
 			}
 			else = {
 				add_country_modifier = {
-					name = italian_minors_end_of_doge
+					name = italian_nations_end_of_doge
 					duration = 9125
 				}
 				venetia_area = {
 					add_province_modifier = {
-						name = italian_minors_venetia
+						name = italian_nations_venetia
 						duration = -1
 					}
 				}
@@ -332,7 +339,7 @@ italian_minors_missions_3 = {
 		}
 	}
 
-	italian_minors_reign_italy = {
+	italian_nations_reign_italy = {
 		icon = me_mission_italy_italy_region
 		required_missions = {	}
 		provinces_to_highlight = {
@@ -382,7 +389,7 @@ italian_minors_missions_3 = {
 		}
 		effect = {
 			add_country_modifier = {
-				name = italian_minors_reign_in_italy
+				name = italian_nations_reign_in_italy
 				duration = 18250
 			}
 		}
@@ -390,18 +397,18 @@ italian_minors_missions_3 = {
 
 }
 
-italian_minors_missions_4 = {
+italian_nations_missions_4 = {
 	slot = 4
 	generic = no
 	ai = yes
 	potential = {
-		is_italian_minor = yes
+		is_italian_nation = yes
 	}
 	has_country_shield = yes
 
-	italian_minors_land_romagna = { # Ferrara must not have this
-		icon = mission_conquer_50_development
-		required_missions = {	}
+	italian_nations_land_romagna = { # Ferrara must not have this
+		icon = me_mission_italy_ferrara
+		required_missions = { italian_nations_italian_conquest	}
 		provinces_to_highlight = {
 			OR = {
 				area = emilia_romagna_area
@@ -429,12 +436,12 @@ italian_minors_missions_4 = {
 			}
 			else = {
 				add_country_modifier = {
-					name = italian_minors_este
+					name = italian_nations_este
 					duration = 9125
 				}
 				emilia_romagna_area = {
 					add_province_modifier = {
-						name = italian_minors_emilia_romagna
+						name = italian_nations_emilia_romagna
 						duration = -1
 					}
 				}
@@ -444,23 +451,23 @@ italian_minors_missions_4 = {
 	
 }
 
-italian_minors_missions_5 = {
+italian_nations_missions_5 = {
 	slot = 5
 	generic = no
 	ai = yes
 	potential = {
-		is_italian_minor = yes
+		is_italian_nation = yes
 	}
 	has_country_shield = yes
 
-	italian_minors_genoa = { # Genoa must not have this
+	italian_nations_genoa = { # Genoa must not have this
 		icon = mission_conquer_50_development
-		required_missions = {	}
+		required_missions = { italian_nations_italian_conquest	}
 		provinces_to_highlight = {
 			OR = {
 				area = liguria_area
 			}
-			NOT = { 
+			NOT = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
@@ -483,12 +490,12 @@ italian_minors_missions_5 = {
 			}
 			else = {
 				add_country_modifier = {
-					name = italian_minors_genoa_republic
+					name = italian_nations_genoa_republic
 					duration = 9125
 				}
 				liguria_area = {
 					add_province_modifier = {
-						name = italian_minors_liguria
+						name = italian_nations_liguria
 						duration = -1
 					}
 				}
@@ -496,9 +503,9 @@ italian_minors_missions_5 = {
 		}
 	}
 	
-    italian_minors_naples = { # Naples must not have this
-		icon = mission_conquer_50_development
-		required_missions = {	}
+    italian_nations_naples = { # Naples must not have this
+		icon = me_mission_italy_campania
+		required_missions = { italian_nations_italian_conquest	}
 		provinces_to_highlight = {
 			OR = {
 				area = naples_area
@@ -526,12 +533,12 @@ italian_minors_missions_5 = {
 			}
 			else = {
 				add_country_modifier = {
-					name = italian_minors_borboni
+					name = italian_nations_borboni
 					duration = 9125
 				}
 				naples_area = {
 					add_province_modifier = {
-						name = italian_minors_napels
+						name = italian_nations_napels
 						duration = -1
 					}
 				}
