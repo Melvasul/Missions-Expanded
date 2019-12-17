@@ -190,7 +190,9 @@ is_italian_minor = {
 		tag = MOD
 		tag = PAR
 		tag = PIS
+		tag = SAR
 		tag = SIE
+		tag = SIC
 		tag = URB
 	}
 }
