@@ -469,9 +469,11 @@
 
  #Event
  ME_Naples_Events.EVTNAME1: "The Fate of Naples"
- ME_Naples_Events.EVTDESC1: "Our envoys will take at least 60 days to arrive to them, they can help us by sending money, soldiers, a general and some troops, refuse our request or support us in the war against rebellion"
- ME_Naples_Events1.EVTOPT1: "Aid from France"
- ME_Naples_Events1.EVTOPT2: "Help from a major Italian power"
+ ME_Naples_Events.EVTDESC1: "The ruling of the Spaniards has prolonged for far too long, it's time for us to rebel and show them who the Napolitans really are, but we are not going to face them alone, we may need to ask someone to help us in this time of need.\nThe French hatred for the Spanish may comes in hand.\nWe had a great bond with the Emperor, we may seek his protection.\nThe arabs are indeed infedels, but their Sicily reign has been flourishing and tolerance.\n\nOur diplomats will take at least 60 days before being able to report back to us.\n\nWe must proceed with caution, their offering may come with an high price in return, we may opt to ask some one else to help us"
+ ME_Naples_Events1.EVTOPT1: "Help from France"
+ ME_Naples_Events1.EVTOPT2: "Help from the Emperor"
+ ME_Naples_Events1.EVTOPT3: "Help from the Ottomans"
+ ME_Naples_Events1.EVTOPT4: "We will choose someone else"
  
  ME_Naples_Events.EVTNAME2: "Aid from France"
  ME_Naples_Events.EVTDESC2: ""
@@ -479,15 +481,17 @@
  ME_Naples_Events2.EVTOPT2: "We will meet them on the battlefield"
  ME_Naples_Events2.EVTOPT3: "We cannot harsh our relationships with the Spanish crown"
 
- ME_Naples_Events.EVTNAME3: "Help from a major Italian power"
+ ME_Naples_Events.EVTNAME3: "The Emperor"
  ME_Naples_Events.EVTDESC3: ""
  ME_Naples_Events3.EVTOPT1: "Send them something, they will arrange by themselves"
  ME_Naples_Events3.EVTOPT2: "We will meet them on the battlefield"
- ME_Naples_Events3.EVTOPT3: "We fear the Spanish repression"
+ ME_Naples_Events3.EVTOPT3: "We cannot harsh our relationships with the Spanish crown"
 
- ME_Naples_Events.EVTNAME4: "Naples stands alone"
- ME_Naples_Events.EVTDESC4: "Despite our best effort no one has decide to help us against "
- ME_Naples_Events4.EVTOPT1: "Fine, I'll do by myself"
+ ME_Naples_Events.EVTNAME4: "The Arab"
+ ME_Naples_Events.EVTDESC4: ""
+ ME_Naples_Events4.EVTOPT1: "Send them something, they will arrange by themselves"
+ ME_Naples_Events4.EVTOPT2: "We will meet them on the battlefield"
+ ME_Naples_Events4.EVTOPT3: "We won't meddle with the affairs of the Christians"
 
  ME_Naples_Events.EVTNAME5: "Restoring the Glory of Greece"
  ME_Naples_Events.EVTDESC5: ""
@@ -504,17 +508,22 @@
  ME_Naples_Events7.EVTOPT1: "Crown yourself"
  ME_Naples_Events7.EVTOPT2: "Refuse the crown"
 
- ME_Naples_Events.EVTNAME8: ""§Y[From.GetName]§! will fund our rebellion"
+ ME_Naples_Events.EVTNAME8: "§Y[From.GetName]§! will fund our rebellion"
  ME_Naples_Events.EVTDESC8: ""
  ME_Naples_Events8.EVTOPT1: "We would have hoped for something more"
 
- ME_Naples_Events.EVTNAME9: ""§Y[From.GetName]§! will help us with the war"
+ ME_Naples_Events.EVTNAME9: "§Y[From.GetName]§! will help us with the war"
  ME_Naples_Events.EVTDESC9: ""
  ME_Naples_Events9.EVTOPT1: "We need to wait for the right time to strike"
 
- ME_Naples_Events.EVTNAME10: ""§Y[From.GetName]§! has decided to not support us"
- ME_Naples_Events.EVTDESC10: "Despite our best efforts and hopes we were not able to persuade the "§Y[From.GetName]§! of "§Y[From.GetName]§!, we may have better luck with one of our italian brothers!"
+ ME_Naples_Events.EVTNAME10: "§Y[From.GetName]§! has decided to not support us"
+ ME_Naples_Events.EVTDESC10: "Despite our best efforts and hopes we were not able to persuade the king §Y[FROM.Monarch.GetName]§! of "§Y[From.GetName]§!"
  ME_Naples_Events10.EVTOPT1: "May them be damned!"
+
+ ME_Naples_Events.EVTNAME11: "Their demands"
+ ME_Naples_Events.EVTDESC11: ""
+ ME_Naples_Events11.EVTOPT1: "We shall allow"
+ ME_Naples_Events11.EVTOPT2: "We will never be a subject again"
 
  naples_rebels_name: "Neapolitan rebels"
  naples_rebels_army: "Neapolitan rebels Liberating Army"
