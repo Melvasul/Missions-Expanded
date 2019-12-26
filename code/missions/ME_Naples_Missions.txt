@@ -43,6 +43,10 @@ naples_missions_1 = {
 		}
 		position = 6
 		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = NAP_INDEP_SPAIN
+				has_country_flag = naples_independence_spain
+			}
 			OR = {
 				OR = {
 					alliance_with = PAP
@@ -435,6 +439,10 @@ naples_missions_2 = {
 		}
 		position = 6
 		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = NAP_INDEP_SPAIN
+				has_country_flag = naples_independence_spain
+			}
 			2983 = {
 				development = 16
 				base_production = 6
@@ -690,6 +698,10 @@ naples_missions_3 = {
 		}
 		position = 6
 		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = NAP_INDEP_SPAIN
+				has_country_flag = naples_independence_spain
+			}
 			sicily_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
@@ -1000,6 +1012,10 @@ naples_missions_4 = {
 		}
 		position = 6
 		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = NAP_INDEP_SPAIN
+				has_country_flag = naples_independence_spain
+			}
 			manpower_percentage = 1
 			war_exhaustion = 0
 		}

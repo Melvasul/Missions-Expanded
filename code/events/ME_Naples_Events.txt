@@ -20,7 +20,7 @@ country_event = { #The Fate of Naples
 				}
 				FRA = {
 					has_opinion = {
-						who = ROOT
+						who = NAP
 						value = 100
 					}
 				}
@@ -46,7 +46,7 @@ country_event = { #The Fate of Naples
 				}
 				HAB = {
 					has_opinion = {
-						who = ROOT
+						who = NAP
 						value = 100
 					}
 				}
@@ -72,7 +72,7 @@ country_event = { #The Fate of Naples
 				}
 				TUR = {
 					has_opinion = {
-						who = ROOT
+						who = NAP
 						value = 100
 					}
 				}
@@ -92,9 +92,11 @@ country_event = { #The Fate of Naples
 			factor = 25 
 			modifier = {
 				factor = 4
-			}
-			add_prestige = 10
+			}			
 		}
+		set_country_flag = naples_victorious_alone
+		add_prestige = 10
+
 	}
 }
 
@@ -685,6 +687,7 @@ country_event = {
 				modifier = nap_helped_rebellionAra
 			}
 		}
+		set_country_flag = naples_victorious_alone
 	}
 }
 
@@ -739,9 +742,10 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
+		set_country_flag = naples_victorious_alone
 		add_opinion = {
-		who = FROM
-		modifier = nap_denied_help
+			who = FROM
+			modifier = nap_denied_help
 		}
 		FROM = {
 			add_opinion = {
@@ -851,6 +855,7 @@ country_event = {
 				else = { create_march = SIC }
 			}
 		}
+		set_country_flag = naples_independence_spain
 	}
 
 	option = {
@@ -896,5 +901,37 @@ country_event = {
 				}
 			}
 		}
+		set_country_flag = naples_independence_spain
 	}
+}
+
+country_event = {
+	id = ME_Naples_Events.12
+	title = ME_Naples_Events.EVTNAME12
+	title = ME_Naples_Events.EVTDESC12
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	trigger = {
+		tag = NAP
+		is_vassal = no
+		is_at_war = no
+		has_country_flag = naples_victorious_alone
+	}
+
+	option = {
+		name = ME_Naples_Events12.EVTOPT1
+		ai_chance = {
+			factor = 100
+		}
+		add_prestige = 50
+		add_legitimacy = 75
+		set_country_flag = naples_independence_spain
+	}
+
 }
