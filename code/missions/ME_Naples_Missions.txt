@@ -45,7 +45,7 @@ naples_missions_1 = {
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = NAP_INDEP_SPAIN
-				has_country_flag = naples_independence_spain
+				has_country_flag = nap_coronated
 			}
 			OR = {
 				OR = {
@@ -441,7 +441,7 @@ naples_missions_2 = {
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = NAP_INDEP_SPAIN
-				has_country_flag = naples_independence_spain
+				has_country_flag = nap_coronated
 			}
 			2983 = {
 				development = 16
@@ -700,7 +700,7 @@ naples_missions_3 = {
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = NAP_INDEP_SPAIN
-				has_country_flag = naples_independence_spain
+				has_country_flag = nap_coronated
 			}
 			sicily_area = {
 				type = all
@@ -1014,7 +1014,7 @@ naples_missions_4 = {
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = NAP_INDEP_SPAIN
-				has_country_flag = naples_independence_spain
+				has_country_flag = nap_coronated
 			}
 			manpower_percentage = 1
 			war_exhaustion = 0

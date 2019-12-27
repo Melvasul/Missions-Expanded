@@ -94,7 +94,6 @@ country_event = { #The Fate of Naples
 				factor = 4
 			}			
 		}
-		set_country_flag = naples_victorious_alone
 		add_prestige = 10
 
 	}
@@ -687,7 +686,6 @@ country_event = {
 				modifier = nap_helped_rebellionAra
 			}
 		}
-		set_country_flag = naples_victorious_alone
 	}
 }
 
@@ -742,7 +740,6 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
-		set_country_flag = naples_victorious_alone
 		add_opinion = {
 			who = FROM
 			modifier = nap_denied_help
@@ -780,7 +777,7 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
-		if = {
+		if = { #if has chosen France help
 			limit = {
 				has_country_flag = naples_france_helped_war
 			}
@@ -810,7 +807,7 @@ country_event = {
 			}
 		}
 
-		else_if = {
+		else_if = { #if has chosen Austrian help
 			limit = {
 				has_country_flag = naples_austria_helped_war
 			}
@@ -825,12 +822,14 @@ country_event = {
 					}
 				}
 				else = {
-					set_in_empire = yes 
+					NAP = {
+						set_in_empire = yes 
+					}
 				}
 			}
 		}
 
-		else_if = {
+		else_if = { #if has chosen Ottoman help
 			limit = {
 				has_country_flag = naples_ottomans_helped_war
 			}
@@ -852,10 +851,11 @@ country_event = {
 						subject = SIC
 					}
 				}
-				else = { create_march = SIC }
+				else = { 
+					create_march = SIC 
+				}
 			}
 		}
-		set_country_flag = naples_independence_spain
 	}
 
 	option = {
@@ -863,7 +863,7 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
-		if = {
+		if = { #if has chosen France help
 			limit = {
 				has_country_flag = naples_france_helped_war
 			}
@@ -871,12 +871,12 @@ country_event = {
 				add_casus_belli = {
 					target = ROOT
 					type = cb_annex
-					months = 12
+					months = 120
 				}
 			}
 		}
 
-		else_if = {
+		else_if = { #if has chosen Austrian help
 			limit = {
 				has_country_flag = naples_austria_helped_war
 			}
@@ -884,12 +884,12 @@ country_event = {
 				add_casus_belli = {
 					target = ROOT
 					type = cb_annex
-					months = 12
+					months = 120
 				}
 			}
 		}
 
-		else_if = {
+		else_if = { #if has chosen Ottoman help
 			limit = {
 				has_country_flag = naples_ottomans_helped_war
 			}
@@ -897,11 +897,10 @@ country_event = {
 				add_casus_belli = {
 					target = ROOT
 					type = cb_annex
-					months = 12
+					months = 120
 				}
 			}
 		}
-		set_country_flag = naples_independence_spain
 	}
 }
 
@@ -921,7 +920,6 @@ country_event = {
 		tag = NAP
 		is_vassal = no
 		is_at_war = no
-		has_country_flag = naples_victorious_alone
 	}
 
 	option = {
@@ -929,9 +927,8 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
-		add_prestige = 50
-		add_legitimacy = 75
-		set_country_flag = naples_independence_spain
+		add_prestige = 25
+		add_legitimacy = 25
+		set_country_flag = nap_coronated
 	}
-
 }

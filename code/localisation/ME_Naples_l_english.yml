@@ -423,7 +423,7 @@
  NAP_OTTOMAN_DOMAIN_TOOLTIP: "§Y[Root.GetName]§! gains permanent claim on all the sea provinces owned by §Y[TUR.GetName]§! provinces in the §Y[137.GetName]§! trade node.\n"
  NAP_EVENT6_SUBJECT_SLAVE_TOOLTIP: "§Y[Root.GetName]§! gains Imported Greek Serfs modifier on all the provinces owned by §Y[Root.GetName]§! in Italy region granting:\nLocal Goods Produced Modifier §G+10.0%§! for 25 years\nLocal Production Efficiency §G+10.0%§! for 25 years\n"
  NAP_GALLEY_TOOLTIP: "§Y[Root.GetName]§! gets 5 galleys in Cyprus"
- NAP_INDEP_SPAIN: "§Y[Root.GetName]§! Has won its independence war against §Y[ARA.GetName]§! with or without asking for external help."
+ NAP_INDEP_SPAIN: "§Y[Root.GetName]§! has received its proper incoronation as a proper sovereign country after its fight against §Y[ARA.GetName]§!."
 
  #Modifiers
  nap_dominus_vobiscum: "Dominus Vobiscum"
