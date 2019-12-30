@@ -1,4 +1,5 @@
 ﻿l_english:
+ #Mission
  epi_building_strength_title: "Building our Strength"
  epi_building_strength_desc: ""
  epi_mighty_fleet_title: "A Mighty fleet"
@@ -69,3 +70,7 @@
  ME_Epirus_Events.EVTDESC2: ""
  ME_Epirus_Events2.EVTOPT1: "We are eager to restore the glory of the empire"
  ME_Epirus_Events2.EVTOPT2: "What is dead may stay so"
+
+ #Decision
+ epi_decision_kingdom_macedon_title: "Restore the Kingdom of Macedon"
+ epi_decision_kingdom_macedon_desc: "MISSING"

@@ -75,8 +75,15 @@ EPI_mission_1_ancient = {
 			epi_military_campaign
 		}
 		position = 6
+		provinces_to_highlight = {
+			area = macedonia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
 		trigger = {
-			
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		effect = {
 			
@@ -89,8 +96,14 @@ EPI_mission_1_ancient = {
 			epi_conquest_greece
 		}
 		position = 6
+		provinces_to_highlight = {
+			province_id = 148
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
 		trigger = {
-			
+			148 = {
+				owned_by = ROOT
+			}
 		}
 		effect = {
 			country_event = {
@@ -107,14 +120,19 @@ EPI_mission_1_ancient = {
 		}
 		position = 8 
 		provinces_to_highlight = {
-			province_id = 121
+			OR = {
+				province_id = 121
+				province_id = 2983
+			}
 			NOT = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		trigger = {
-			naples_area = {
-				type = all
+			121 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2983 = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
@@ -136,29 +154,19 @@ EPI_mission_1_ancient = {
 		required_missions = {
 			epi_naples
 		}
-		position = 8 
+		position = 8
+		provinces_to_highlight = {
+			province_id = 118
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
 		trigger = {
-			naples_area = {
-				type = all
+			118 = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
-			naples_area = {
-				limit = {
-					NOT = { 
-						owned_by = ROOT 
-					}
-				}
-				add_permanent_claim = ROOT
-			}
-			calabria_area = {
-				limit = {
-					NOT = { 
-						owned_by = ROOT 
-					}
-				}
-				add_permanent_claim = ROOT
+			118 = {
+
 			}
 		}
 	}
@@ -175,6 +183,7 @@ EPI_mission_1_ancient = {
 			war_exhaustion = 0
 		}
 		effect = {
+			set_government_rank = 3
 			add_stability = 1
 			add_adm_power = 100
 			add_dip_power = 100
@@ -275,6 +284,15 @@ EPI_mission_2_ancient = {
 			war_exhaustion = 0
 		}
 		effect = {
+			macedonia_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_core = EPI
+				add_permanent_claim = EPI
+			}
 			add_country_modifier = {
 				name = epi_military_campaign
 				duration = 5475
@@ -289,9 +307,16 @@ EPI_mission_2_ancient = {
 		}
 		position = 6
 		trigger = {
-			
 		}
 		effect = {
+			apulia_area = {
+				limit = {
+					NOT = { 
+						owned_by = ROOT 
+					}
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 
@@ -300,7 +325,11 @@ EPI_mission_2_ancient = {
 		required_missions = {
 			epi_legacy_phyrrus
 		}
-		position = 7 
+		position = 7
+		provinces_to_highlight = {
+			area = apulia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
 		trigger = {
 			apulia_area = {
 				type = all
@@ -308,7 +337,15 @@ EPI_mission_2_ancient = {
 			}
 		}
 		effect = {
-			naples = {
+			121 = {
+				limit = {
+					NOT = { 
+						owned_by = ROOT 
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			2983 = {
 				limit = {
 					NOT = { 
 						owned_by = ROOT 
@@ -332,7 +369,11 @@ EPI_mission_2_ancient = {
 		required_missions = {
 			epi_shores_italy
 		}
-		position = 7 
+		position = 7
+		provinces_to_highlight = {
+			area = calabria_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
 		trigger = {
 			calabria_area = {
 				type = all
@@ -356,7 +397,11 @@ EPI_mission_2_ancient = {
 		required_missions = {
 			epi_conquest_south_italy
 		}
-		position = 7 
+		position = 7
+		provinces_to_highlight = {
+			area = sicily_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
 		trigger = {
 			sicily_area = {
 				type = all
@@ -365,7 +410,7 @@ EPI_mission_2_ancient = {
 		}
 		effect = {
 			sicily_area = {
-				add_base_tax = 10
+				add_base_tax = 1
 			}
 		}
 	}
@@ -386,9 +431,6 @@ EPI_mission_3 = {
 
 		}
 		position = 1
-		provinces_to_highlight = {
-
-		}
 		trigger = {
 			army_size_percentage = 1
 			num_of_generals = 1
@@ -533,6 +575,7 @@ EPI_mission_3 = {
 			legitimacy = 90
 		}
 		effect = {
+			set_government_rank = 2
 			country_event = {
 				id = ME_Epirus_Events.1
 				months = 2
@@ -557,9 +600,17 @@ EPI_mission_3_despotate = {
 			epi_unite_greece
 		}
 		position = 7
+		provinces_to_highlight = {
+			area = bulgaria_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
 		trigger = {
-			is_at_peace = yes
-			war_exhaustion = 0
+			bulgaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		effect = {
 			add_stability = 1
@@ -633,6 +684,15 @@ EPI_mission_4_despotate = {
 			war_exhaustion = 0
 		}
 		effect = {
+			macedonia_area = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_core = EPI
+				add_permanent_claim = EPI
+			}
 			add_stability = 1
 			add_adm_power = 100
 			add_dip_power = 100
@@ -647,16 +707,37 @@ EPI_mission_4_despotate = {
 			epi_komneno_legacy
 		}
 		position = 6
+		provinces_to_highlight = {
+			area = macedonia_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
 		trigger = {
 			is_at_peace = yes
 			war_exhaustion = 0
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		effect = {
-			add_stability = 1
-			add_adm_power = 100
-			add_dip_power = 100
-			add_mil_power = 100
-			add_prestige = 25
+			bulgaria_area = {
+				limit = {
+					NOT = { 
+						owned_by = ROOT 
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			thrace_area = {
+				limit = {
+					NOT = { 
+						owned_by = ROOT 
+					}
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 
@@ -666,16 +747,37 @@ EPI_mission_4_despotate = {
 			epi_unite_greece
 		}
 		position = 7
+		provinces_to_highlight = {
+			area = thrace_area
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+		}
 		trigger = {
+			thrace_area = {
+				type = ALL
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 			is_at_peace = yes
 			war_exhaustion = 0
 		}
 		effect = {
-			add_stability = 1
-			add_adm_power = 100
-			add_dip_power = 100
-			add_mil_power = 100
-			add_prestige = 25
+			aydin_area = {
+				limit = {
+					NOT = { 
+						owned_by = ROOT 
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			hudavendigar_area = {
+				limit = {
+					NOT = {
+						country_or_non_sovereign_subject_holds = ROOT 
+					}
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 
@@ -683,13 +785,37 @@ EPI_mission_4_despotate = {
 		icon = mission_invade_island
 		required_missions = {
 			epi_retaking_constantinople
+			epi_retaking_coast
 		}
-		position = 7
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = aydin_area
+				area = hudavendigar_area
+				area = thrace_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+		}
 		trigger = {
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hudavendigar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			aydin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 			is_at_peace = yes
 			war_exhaustion = 0
 		}
 		effect = {
+			set_government_rank = 3
 			add_stability = 1
 			add_adm_power = 100
 			add_dip_power = 100
@@ -791,9 +917,24 @@ EPI_mission_5_despotate = {
 			epi_retaking_constantinople
 		}
 		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = aydin_area
+				area = hudavendigar_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+		}
 		trigger = {
-			is_at_peace = yes
-			war_exhaustion = 0
+			hudavendigar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			aydin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		effect = {
 			add_stability = 1

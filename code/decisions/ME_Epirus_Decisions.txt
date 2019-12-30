@@ -1,0 +1,47 @@
+country_decisions = {
+	epi_decision_kingdom_macedon = {
+		major = yes
+		potential = {
+			tag = EPI
+			has_country_flag = epirus_allow_macedon
+		}
+		allow = {
+			NOT = { exists = MAC }
+			has_country_flag = epirus_allow_macedon
+		}
+		effect = {
+			every_province = {
+				limit = {
+					owned_by = EPI
+				}
+				add_core = MAC
+			}
+			release = MAC
+			MAC = { change_primary_culture = ROOT }
+			MAC = {
+				set_capital = 148 #Macedonia
+				if = {
+					limit = {
+						NOT = { government = monarchy }
+					}
+					change_government = monarchy
+					set_legacy_government = feudal_monarchy
+				}
+				if = {
+					limit = {
+						NOT = { government_rank = 3 }
+					}
+					set_government_rank = 3
+				}
+				set_country_flag = formed_macedon
+				set_religion = orthodox
+			}
+			change_tag = MAC
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+			}
+		}
+	}
+}

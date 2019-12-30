@@ -1,10 +1,10 @@
 #Country Name: Please see filename.
 
-graphical_culture = westerngfx
+graphical_culture = easterngfx
 
-color = { 121 188 35 }
+color = { 18 4 174 }
 
-revolutionary_colors = { 15  6  16 } #Parthenopean Republic
+revolutionary_colors = { 18 4 174 } #Parthenopean Republic
 
 historical_score = 300
 
