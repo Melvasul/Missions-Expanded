@@ -1,0 +1,806 @@
+EPI_mission_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+	}
+	has_country_shield = yes
+
+	epi_mighty_fleet = {
+		icon = mission_assemble_an_army
+		required_missions = { 
+			epi_building_strength
+		}
+		position = 2
+		trigger = {
+			
+		}
+		effect = {
+			create_admiral = {
+				tradition = 40
+			}
+			add_country_modifier = {
+				name = 
+				duration = 9125
+			}
+			142 = {
+				if = {
+					limit = {
+						NOT = { 
+							owned_by = ROOT 
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	epi_conquest_corfu = {
+		icon = mission_monarch_in_throne_room
+		required_missions = {
+			epi_mighty_fleet
+		}
+		position = 3
+		trigger = {
+			142 = = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			142 = {
+				add_province_modifier = {
+					name = 
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+EPI_mission_1_ancient = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+		has_country_flag = epirus_ancient_root
+	}
+	has_country_shield = yes
+
+	epi_conquest_greece = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { 
+			epi_military_campaign
+		}
+		position = 6
+		trigger = {
+			
+		}
+		effect = {
+			
+		}
+	}
+
+	epi_pella = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { 
+			epi_conquest_greece
+		}
+		position = 6
+		trigger = {
+			
+		}
+		effect = {
+			country_event = {
+				id = ME_Epirus_Events.2
+				months = 2
+			}
+		}
+	}
+
+	epi_naples = {
+		icon = mission_invade_island
+		required_missions = {
+			epi_shores_italy
+		}
+		position = 8 
+		provinces_to_highlight = {
+			province_id = 121
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			naples_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			118 = {
+				limit = {
+					NOT = { 
+						owned_by = ROOT 
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			
+		}
+	}
+
+	epi_fall_rome = {
+		icon = mission_invade_island
+		required_missions = {
+			epi_naples
+		}
+		position = 8 
+		trigger = {
+			naples_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			naples_area = {
+				limit = {
+					NOT = { 
+						owned_by = ROOT 
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			calabria_area = {
+				limit = {
+					NOT = { 
+						owned_by = ROOT 
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	epi_glory_phyrrus = {
+		icon = mission_invade_island
+		required_missions = {
+			epi_fall_rome
+			epi_conquest_sicily
+		}
+		position = 9
+		trigger = {
+			is_at_peace = yes
+			war_exhaustion = 0
+		}
+		effect = {
+			add_stability = 1
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_prestige = 25
+		}
+	}
+}	
+
+EPI_mission_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+	}
+	has_country_shield = yes
+
+	epi_nicopolis = {
+		icon = mission_assemble_an_army
+		required_missions = {
+			epi_building_strength
+		}
+		position = 2
+		provinces_to_highlight = {
+			provinces_to_highlight = 144
+		}
+		trigger = {
+			144 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			144 = {
+				add_province_modifier = {
+					name = 
+					duration = -1
+				}
+				add_base_manpower = 2
+				add_base_production = 2
+				add_base_tax = 2
+			}
+		}
+	}
+
+	epi_theatre_dodona = {
+		icon = mission_unite_home_region
+		required_missions = {
+			epi_nicopolis
+		}
+		position = 3
+		provinces_to_highlight = {
+			province_id = 144
+		}
+		trigger = {
+			144 = {
+				owned_by = ROOT
+				development = 15
+			}
+			artist = 2
+		}
+		effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			144 = {
+				add_province_modifier = {
+					name = 
+					duration = -1
+				}
+				add_building_construction = {
+					building = university
+					speed = 1
+					cost = 0
+				}
+			}
+		}
+	}
+}
+
+EPI_mission_2_ancient = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+		has_country_flag = epirus_ancient_root
+	}
+	has_country_shield = yes
+
+	epi_military_campaign = {
+		icon = mission_build_up_to_force_limit
+		required_missions = {
+			epi_kingdom_epirus
+		}
+		position = 5
+		trigger = {
+			manpower_percentage = 1
+			war_exhaustion = 0
+		}
+		effect = {
+			add_country_modifier = {
+				name = epi_military_campaign
+				duration = 5475
+			}
+		}
+	}
+
+	epi_legacy_phyrrus = {
+		icon = mission_build_up_to_force_limit
+		required_missions = {
+			epi_military_campaign
+		}
+		position = 6
+		trigger = {
+			
+		}
+		effect = {
+		}
+	}
+
+	epi_shores_italy = {
+		icon = mission_invade_island
+		required_missions = {
+			epi_legacy_phyrrus
+		}
+		position = 7 
+		trigger = {
+			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			naples = {
+				limit = {
+					NOT = { 
+						owned_by = ROOT 
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			calabria_area = {
+				limit = {
+					NOT = { 
+						owned_by = ROOT 
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	epi_conquest_south_italy = {
+		icon = mission_invade_island
+		required_missions = {
+			epi_shores_italy
+		}
+		position = 7 
+		trigger = {
+			calabria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			sicily_area = {
+				limit = {
+					NOT = { 
+						owned_by = ROOT 
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	epi_conquest_sicily = {
+		icon = mission_invade_island
+		required_missions = {
+			epi_conquest_south_italy
+		}
+		position = 7 
+		trigger = {
+			sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			sicily_area = {
+				add_base_tax = 10
+			}
+		}
+	}
+}	
+
+EPI_mission_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+	}
+	has_country_shield = yes
+
+	epi_building_strength = {
+		icon = mission_assemble_an_army
+		required_missions = {
+
+		}
+		position = 1
+		provinces_to_highlight = {
+
+		}
+		trigger = {
+			army_size_percentage = 1
+			num_of_generals = 1
+			manpower_percentage = 1
+		}
+		effect = {
+			add_mil_power = 50
+			add_country_modifier = {
+				name = 
+				duration = -1
+			}
+			147 = {
+				if = {
+					limit = {
+						NOT = { 
+							owned_by = ROOT 
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	epi_ours_right = {
+		icon = mission_assemble_an_army
+		required_missions = {
+			epi_building_strength
+		}
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 144
+				province_id = 147
+			}
+		}
+		trigger = {
+			144 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			147 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			add_country_modifier = {
+				name = 
+				duration = -1
+			}
+			albania_area = {
+				add_permanent_claim = ROOT
+			}
+			146 = {
+				if = {
+					limit = {
+						NOT = { 
+							owned_by = ROOT 
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			145 = {
+				if = {
+					limit = {
+						NOT = { 
+							owned_by = ROOT 
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			1773 = {
+				if = {
+					limit = {
+						NOT = { 
+							owned_by = ROOT 
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	epi_core_hellas = {
+		icon = mission_assemble_an_army
+		required_missions = {
+			epi_ours_right
+		}
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 145
+				province_id = 146
+				province_id = 1773
+			}
+		}
+		trigger = {
+			145 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			146 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1773 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 50
+			add_country_modifier = {
+				name = 
+				duration = -1
+			}
+		}
+	}
+
+	epi_kingdom_epirus = {
+		icon = mission_assemble_an_army
+		required_missions = {
+			epi_conquest_corfu
+			epi_core_hellas
+			epi_albania
+			epi_royal_guard
+		}
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				area = albania_area
+				area = northern_greece
+				province_id = 145
+				province_id = 146
+				province_id = 1773
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+		}
+		trigger = {
+			legitimacy = 90
+		}
+		effect = {
+			country_event = {
+				id = ME_Epirus_Events.1
+				months = 2
+			}
+		}
+	}
+}
+
+EPI_mission_3_despotate = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+		has_country_flag = epirus_despotate_root
+	}
+	has_country_shield = yes
+
+	epi_advancing_bulgaria = {
+		icon = mission_invade_island
+		required_missions = {
+			epi_unite_greece
+		}
+		position = 7
+		trigger = {
+			is_at_peace = yes
+			war_exhaustion = 0
+		}
+		effect = {
+			add_stability = 1
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_prestige = 25
+		}
+	}
+}
+
+EPI_mission_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+	}
+	has_country_shield = yes
+
+	epi_albania = {
+		icon = mission_cannons_firing
+		required_missions = {
+			epi_ours_right
+		}
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = albania_area
+			}
+			NOT = { 
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+		}
+		trigger = {
+			albania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_army_tradition = 10
+			if = {
+				limit = {
+					has_dlc = "Cradle of Civilization"
+				}
+				add_army_professionalism = 0.05
+			}
+		}
+	}
+}
+
+EPI_mission_4_despotate = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+		has_country_flag = epirus_despotate_root
+	}
+	has_country_shield = yes
+
+	epi_komneno_legacy = {
+		icon = mission_invade_island
+		required_missions = {
+			epi_kingdom_epirus
+		}
+		position = 5
+		trigger = {
+			is_at_peace = yes
+			war_exhaustion = 0
+		}
+		effect = {
+			add_stability = 1
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_prestige = 25
+		}
+	}
+
+	epi_unite_greece = {
+		icon = mission_invade_island
+		required_missions = {
+			epi_komneno_legacy
+		}
+		position = 6
+		trigger = {
+			is_at_peace = yes
+			war_exhaustion = 0
+		}
+		effect = {
+			add_stability = 1
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_prestige = 25
+		}
+	}
+
+	epi_retaking_constantinople = {
+		icon = mission_invade_island
+		required_missions = {
+			epi_unite_greece
+		}
+		position = 7
+		trigger = {
+			is_at_peace = yes
+			war_exhaustion = 0
+		}
+		effect = {
+			add_stability = 1
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_prestige = 25
+		}
+	}
+
+	epi_securing_doors = {
+		icon = mission_invade_island
+		required_missions = {
+			epi_retaking_constantinople
+		}
+		position = 7
+		trigger = {
+			is_at_peace = yes
+			war_exhaustion = 0
+		}
+		effect = {
+			add_stability = 1
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_prestige = 25
+		}
+	}
+	
+}
+
+EPI_mission_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+	}
+	has_country_shield = yes
+
+	epi_mighty_army = {
+		icon = mission_cannons_firing
+		required_missions = {
+			epi_building_strength
+		}
+		position = 2
+		provinces_to_highlight = {
+			
+		}
+		trigger = {
+			
+		}
+		effect = {
+			add_army_tradition = 10
+			if = {
+				limit = {
+					has_dlc = "Cradle of Civilization"
+				}
+				add_army_professionalism = 0.05
+			}
+		}
+	}
+
+	epi_royal_guard = {
+		icon = mission_cannons_firing
+		required_missions = {
+			epi_mighty_army
+		}
+		position = 3
+		provinces_to_highlight = {
+			
+		}
+		trigger = {
+			
+		}
+		effect = {
+			add_army_tradition = 10
+			if = {
+				limit = {
+					has_dlc = "Cradle of Civilization"
+				}
+				add_army_professionalism = 0.05
+			}
+		}
+	}
+}
+
+EPI_mission_5_despotate = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+		has_country_flag = epirus_despotate_root
+	}
+	has_country_shield = yes
+
+	epi_war_serbian = {
+		icon = mission_invade_island
+		required_missions = {
+			epi_unite_greece
+		}
+		position = 7
+		trigger = {
+			is_at_peace = yes
+			war_exhaustion = 0
+		}
+		effect = {
+			add_stability = 1
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_prestige = 25
+		}
+	}
+
+	epi_retaking_coast = {
+		icon = mission_invade_island
+		required_missions = {
+			epi_retaking_constantinople
+		}
+		position = 8
+		trigger = {
+			is_at_peace = yes
+			war_exhaustion = 0
+		}
+		effect = {
+			add_stability = 1
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_prestige = 25
+		}
+	}
+}
