@@ -183,7 +183,7 @@ EPI_mission_1_ancient = {
 			war_exhaustion = 0
 		}
 		effect = {
-			set_government_rank = 3
+			set_government_rank = 2
 			add_stability = 1
 			add_adm_power = 100
 			add_dip_power = 100
@@ -290,8 +290,8 @@ EPI_mission_2_ancient = {
 						owned_by = ROOT
 					}
 				}
-				add_core = EPI
-				add_permanent_claim = EPI
+				add_core = ROOT
+				add_permanent_claim = ROOT
 			}
 			add_country_modifier = {
 				name = epi_military_campaign
@@ -522,7 +522,7 @@ EPI_mission_3 = {
 		required_missions = {
 			epi_ours_right
 		}
-		position = 2
+		position = 3
 		provinces_to_highlight = {
 			OR = {
 				province_id = 145
@@ -575,7 +575,6 @@ EPI_mission_3 = {
 			legitimacy = 90
 		}
 		effect = {
-			set_government_rank = 2
 			country_event = {
 				id = ME_Epirus_Events.1
 				months = 2
@@ -690,8 +689,8 @@ EPI_mission_4_despotate = {
 						owned_by = ROOT
 					}
 				}
-				add_core = EPI
-				add_permanent_claim = EPI
+				add_core = ROOT
+				add_permanent_claim = ROOT
 			}
 			add_stability = 1
 			add_adm_power = 100
@@ -815,7 +814,7 @@ EPI_mission_4_despotate = {
 			war_exhaustion = 0
 		}
 		effect = {
-			set_government_rank = 3
+			set_government_rank = 2
 			add_stability = 1
 			add_adm_power = 100
 			add_dip_power = 100

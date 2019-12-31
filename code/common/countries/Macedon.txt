@@ -2,9 +2,9 @@
 
 graphical_culture = easterngfx
 
-color = { 18 4 174 }
+color = { 72 0 127 }
 
-revolutionary_colors = { 18 4 174 } #Parthenopean Republic
+revolutionary_colors = { 72 0 127 } #Parthenopean Republic
 
 historical_score = 300
 
