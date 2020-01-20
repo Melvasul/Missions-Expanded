@@ -15,7 +15,58 @@ ODA_missions_1 = {
 		}
 		position = 2
 		trigger = {
-			
+			if = {
+				limit = {
+					exists = TKG
+				}
+				OR = {
+					AND = {
+						alliance_with = TKG
+						TKG = {
+							has_opinion = {
+								who = ROOT
+								value = 150
+							}
+						}
+					}
+					AND = {
+						is_rival = TKG
+						NOT = {
+							TKG = {
+								has_opinion = {
+									who = ROOT
+									value = -100
+								}
+							}
+						}
+					}
+				}
+			}
+			else = {
+				any_country = {
+					limit = {
+						owns = 4360
+					}
+					OR = {
+						AND = {
+							alliance_with = ROOT
+							has_opinion = {
+								who = ROOT
+								value = 150
+							}
+						}
+						AND = {
+							is_rival = ROOT
+							NOT = {
+								has_opinion = {
+									who = ROOT
+									value = -100
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 		effect = {
 			
@@ -42,7 +93,7 @@ ODA_missions_1 = {
 		required_missions = { 
 			ODA_unite_chubu
 		}
-		position = 7
+		position = 6
 		provinces_to_highlight = {
 			OR = {
 				#province_id = 
@@ -118,23 +169,6 @@ ODA_missions_2 = {
 			
 		}
 	}
-
-	ODA_settsu = {
-		icon = mission_assemble_an_army
-		required_missions = { 
-			ODA_march_kyoto
-		}
-		position = 6
-		provinces_to_highlight = {
-			
-		}
-		trigger = {
-			
-		}
-		effect = {
-			
-		}
-	}
 }
 
 ODA_missions_3 = {
@@ -179,7 +213,7 @@ ODA_missions_3 = {
 		}
 	}
 
-	ODA_wester_chubu = {
+	ODA_western_chubu = {
 		icon = mission_assemble_an_army
 		required_missions = { 
 			ODA_storming_mino
@@ -218,23 +252,7 @@ ODA_missions_3 = {
 		icon = mission_assemble_an_army
 		required_missions = { 
 			ODA_march_kyoto
-		}
-		position = 6
-		provinces_to_highlight = {
-			
-		}
-		trigger = {
-			
-		}
-		effect = {
-			
-		}
-	}
-
-	ODA_pushing_west = {
-		icon = mission_assemble_an_army
-		required_missions = { 
-			ODA_mightiest_daimyo
+			ODA_take_musashi
 		}
 		position = 7
 		provinces_to_highlight = {
@@ -280,6 +298,23 @@ ODA_missions_4 = {
 			ODA_appease_shogun
 		}
 		position = 4
+		trigger = {
+			
+		}
+		effect = {
+			
+		}
+	}
+
+	ODA_settsu = {
+		icon = mission_assemble_an_army
+		required_missions = { 
+			ODA_march_kyoto
+		}
+		position = 6
+		provinces_to_highlight = {
+			
+		}
 		trigger = {
 			
 		}
