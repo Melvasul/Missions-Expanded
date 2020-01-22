@@ -1,934 +1,131 @@
-namespace = ME_Naples_Events
+namespace = ME_Oda_Events
 
-country_event = { #The Fate of Naples
-	id = ME_Naples_Events.1
-	title = ME_Naples_Events.EVTNAME1
-	desc = ME_Naples_Events.EVTDESC1
+country_event = { # The Rise of Oda Nobunaga
+	id = ME_Oda_Events.1
+	title = ME_Oda_Events.EVTNAME1
+	desc = ME_Oda_Events.EVTDESC1
 	picture = COURT_eventPicture
 
-	is_triggered_only = yes
+	mean_time_to_happen = { months = 12 }
 
-	option = {
-		name = ME_Naples_Events1.EVTOPT1
-		ai_chance = {
-			factor = 25
-			modifier = {
-				factor = 4
-				has_opinion = {
-					who = FRA
-					value = 100
-				}
-				FRA = {
-					has_opinion = {
-						who = NAP
-						value = 100
-					}
-				}
-			}
-		}
-		FRA = {
-			country_event = {
-				id = ME_Naples_Events.2
-				days = 60
-			}
-		}
+	trigger = {
+		tag = ODA
+		mission_completed = ODA_western_chubu
 	}
 
 	option = {
-		name = ME_Naples_Events1.EVTOPT2
+		name = ME_Oda_Events1.EVTOPT1
 		ai_chance = {
-			factor = 25
-			modifier = {
-				factor = 4
-				has_opinion = {
-					who = HAB
-					value = 100
-				}
-				HAB = {
-					has_opinion = {
-						who = NAP
-						value = 100
-					}
-				}
-			}
-		}
-		HAB = {
-			country_event = {
-				id = ME_Naples_Events.3
-				days = 60
-			}
-		}
-	}
-
-	option = {
-		name = ME_Naples_Events1.EVTOPT3
-		ai_chance = {
-			factor = 25
-			modifier = {
-				factor = 4
-				has_opinion = {
-					who = TUR
-					value = 100
-				}
-				TUR = {
-					has_opinion = {
-						who = NAP
-						value = 100
-					}
-				}
-			}
-		}
-		TUR = {
-			country_event = {
-				id = ME_Naples_Events.4
-				days = 60
-			}
-		}
-	}
-
-	option = {
-		name = ME_Naples_Events1.EVTOPT4
-		ai_chance = {
-			factor = 25 
-			modifier = {
-				factor = 4
-			}			
-		}
-		add_prestige = 10
-
-	}
-}
-
-country_event = { # For France
-	id = ME_Naples_Events.2
-	title = ME_Naples_Events.EVTNAME2
-	desc = ME_Naples_Events.EVTDESC2
-	picture = HARBOUR_eventPicture
-
-	is_triggered_only = yes
-
-	option = {
-		name = ME_Naples_Events2.EVTOPT1
-		ai_chance = {
-			factor = 33
-			modifier = {
-				factor = 3
-				is_rival = ARA
-			}
-		}
-		ROOT = {
-			add_treasury = -100
-			add_manpower = -5
-		}
-		FROM = {
-			add_treasury = 50
-			add_manpower = 5
-			create_general = {
-				tradition = 40
-			}
-			country_event = {
-				id = ME_Naples_Events.8 
-				days = 60
-			}
-		}
-		121 = {
-			if = {
-				owned_by = FROM
-			}
-			infantry = FROM
-			infantry = FROM
-			infantry = FROM
-		}
-		add_historical_rival = ARA
-	}
-
-	option = {
-		name = ME_Naples_Events2.EVTOPT2
-		ai_chance = {
-			factor = 33
-			modifier = {
-				factor = 3
-				OR = {
-					has_opinion = {
-						who = NAP
-						value = 100
-					}
-					is_rival = ARA
-					army_strength = {
-						who = ARA
-						value = 0.75
-					}
-				}
-			}
-		}
-		add_trust = {
-			who = NAP
-			value = 75
-			mutual = yes
-		}
-		add_historical_friend = FROM
-		add_historical_rival = ARA
-		FROM = {
-			set_country_flag = naples_france_helped_war
-			country_event = {
-				id = ME_Naples_Events.9
-				days = 60
-			}
-		}		
-	}
-
-	option = {
-		name = ME_Naples_Events2.EVTOPT3
-		ai_chance = {
-			factor = 33
-			modifier = {
-				factor = 3
-				alliance_with = ARA
-			}
-		}
-		FROM = {
-			ountry_event = { 
-				id = ME_Naples_Events.10
-				days = 60
-			}
-		}
-	}
-}
-
-country_event = { # For Austria
-	id = ME_Naples_Events.3
-	title = ME_Naples_Events.EVTNAME3
-	desc = ME_Naples_Events.EVTDESC3
-	picture = HARBOUR_eventPicture
-
-	is_triggered_only = yes
-
-	option = {
-		name = ME_Naples_Events3.EVTOPT1
-		ai_chance = {
-			factor = 33
-			modifier = {
-				factor = 3
-				has_opinion = {
-					who = NAP
-					value = 100
-				}
-			}
-		}
-		ROOT = {
-			add_treasury = -100
-			add_manpower = -5
-		}
-		NAP = {
-			add_treasury = 50
-			add_manpower = 5
-		}
-		121 = {
-			if = {
-				owned_by = NAP
-			}
-			infantry = NAP
-			infantry = NAP
-			infantry = NAP
-		}
-		NAP = {
-			country_event = {
-				id = ME_Naples_Events.8
-				days = 60
-			}
-		}
-	}
-
-	option = {
-		name = ME_Naples_Events3.EVTOPT2
-		ai_chance = {
-			factor = 33
-			modifier = {
-				factor = 3
-				OR = {
-					has_opinion = {
-						who = NAP
-						value = 100
-					}
-					is_at_war = no
-					army_strength = {
-						who = ARA
-						value = 0.66
-					}
-				}
-			}
-			modifier = {
-				factor = 0
-				NOT = {
-					army_strength = {
-						who = ARA
-						value = 0.50
-					}
-				}
-			}
-		}
-		add_historical_rival = ARA
-		add_historical_friend = FROM
-		add_trust = {
-			who = FROM
-			value = 75
-			mutual = yes
-		}
-		FROM = {
-			set_country_flag = naples_austria_helped_war
-			country_event = {
-				id = ME_Naples_Events.9
-				days = 60
-			}
-		}
-		
-	}
-
-	option = {
-		name = ME_Naples_Events3.EVTOPT3
-		ai_chance = {
-			factor = 33
-			modifier = {
-				factor = 3
-				NOT = {
-					army_strength = {
-						who = ARA
-						value = 0.50
-					}
-				}
-			}
-		}
-		FROM = {
-			country_event = {
-				id = ME_Naples_Events.10
-				days = 60
-			}
-		}
-	}
-}
-
-country_event = { # For the Ottomans
-	id = ME_Naples_Events.4
-	title = ME_Naples_Events.EVTNAME4
-	desc = ME_Naples_Events.EVTDESC4
-	picture = HARBOUR_eventPicture
-
-	is_triggered_only = yes
-
-	option = {
-		name = ME_Naples_Events2.EVTOPT1
-		ai_chance = {
-			factor = 33
-			modifier = {
-				factor = 3
-				is_rival = ARA
-			}
-		}
-		ROOT = {
-			add_treasury = -100
-			add_manpower = -5
-		}
-		FROM = {
-			add_treasury = 50
-			add_manpower = 5
-			create_general = {
-				tradition = 40
-			}
-			country_event = {
-				id = ME_Naples_Events.8 
-				days = 60
-			}
-		}
-		121 = {
-			if = {
-				owned_by = FROM
-			}
-			infantry = FROM
-			infantry = FROM
-			infantry = FROM
-		}
-		add_historical_rival = ARA
-	}
-
-	option = {
-		name = ME_Naples_Events2.EVTOPT2
-		ai_chance = {
-			factor = 33
-			modifier = {
-				factor = 3
-				OR = {
-					has_opinion = {
-						who = NAP
-						value = 100
-					}
-					is_rival = ARA
-					army_strength = {
-						who = ARA
-						value = 0.75
-					}
-				}
-			}
-		}
-		add_trust = {
-			who = NAP
-			value = 75
-			mutual = yes
-		}
-		add_historical_friend = FROM
-		add_historical_rival = ARA
-		FROM = {
-			set_country_flag = naples_ottomans_helped_war
-			country_event = {
-				id = ME_Naples_Events.9
-				days = 60
-			}
-		}		
-	}
-
-	option = {
-		name = ME_Naples_Events2.EVTOPT3
-		ai_chance = {
-			factor = 33
-			modifier = {
-				factor = 3
-				alliance_with = ARA
-			}
-		}
-		FROM = {
-			ountry_event = { 
-				id = ME_Naples_Events.10
-				days = 60
-			}
-		}
-	}
-}
-
-country_event = { #Restoring the Glory of Greece
-	id = ME_Naples_Events.5
-	title = ME_Naples_Events.EVTNAME5
-	desc = ME_Naples_Events.EVTDESC5
-	picture = HARBOUR_eventPicture
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = ME_Naples_Events5.EVTOPT1
-		
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 0
-				NOT = {
-					num_of_free_diplomatic_relations = 1
-				}
-			}
-		}		
-		every_province = {
-			limit = {
-				NOT = {
-					is_core = GRE
-				}
-				owned_by = ROOT
-				culture = greek
-			}
-			add_core = GRE
-		}
-		release = GRE
-		GRE = {
-			set_dynasty = NAP
-			change_government = monarchy
-			add_government_reform = feudalism_reform
+			factor = 100
 		}
 		if = {
 			limit = {
-				is_expanded_mod_active = { mod = subjects }
+				has_heir = yes
 			}
-			create_subject = {
-				subject_type = brother_kingdom
-				subject = GRE
-			}
+			kill_heir = yes
 		}
-		else = { create_march = GRE }
-		add_country_modifier = {
-			name = nap_subject_tribute
-			duration = -1
+		define_ruler = {
+			name = "Oda"
+			dynasty = "Nobunaga"
+			adm = 6
+			dip = 5
+			mil = 4
+			age = 14
+			claim = 100
+			fixed = yes
 		}
-		northern_greece_area = {
-			limit = {
-				NOT = {
-					is_core = GRE
-				}
-			}
-			add_core = GRE
-			add_permanent_claim = GRE
-		}
-		macedonia_area = {
-			limit = {
-				NOT = {
-					is_core = GRE
-				}
-			}
-			add_core = GRE
-			add_permanent_claim = GRE
-		}
-		morea_area = {
-			limit = {
-				NOT = {
-					is_core = GRE
-				}
-			}
-			add_core = GRE
-			add_permanent_claim = GRE
-		}		
-		aegean_archipelago_area = {
-			limit = {
-				NOT = {
-					is_core = GRE
-				}
-			}
-			add_core = GRE
-			add_permanent_claim = GRE
-		}
+		set_ruler_flag = ODA_Nobunaga_ruling
 	}
+}
+
+country_event = { # The Rise of Toyotomi Hideyoshi
+	id = ME_Oda_Events.2
+	title = ME_Oda_Events.EVTNAME2
+	desc = ME_Oda_Events.EVTDESC2
+	picture = HARBOUR_eventPicture
+
+	is_triggered_only = yes
 
 	option = {
-		name = ME_Naples_Events5.EVTOPT2
-
+		name = ME_Oda_Events2.EVTOPT1
 		ai_chance = {
-			factor = 50
-		}
-		custom_tooltip = NAP_EVENT6_SUBJECT_SLAVE_TOOLTIP
-		hidden_effect = {
-			every_province = {
-				limit = {
-					owned_by = ROOT
-					region = italy_region
-				}
-				add_province_modifier = {
-					name = nap_subject_slaves
-					duration = 9125
-				}
-			}
+			factor = 100
 		}
 	}
 }
 
-country_event = { #The Throne of Provence for Provence
-	id = ME_Naples_Events.6
-	title = ME_Naples_Events.EVTNAME6
-	desc = ME_Naples_Events.EVTDESC6
+country_event = { # The Death of Nobunaga
+	id = ME_Oda_Events.3
+	title = ME_Oda_Events.EVTNAME3
+	desc = ME_Oda_Events.EVTDESC3
 	picture = HARBOUR_eventPicture
-	
+
 	is_triggered_only = yes
 
 	option = {
-		name = ME_Naples_Events6.EVTOPT1
-
+		name = ME_Oda_Events3.EVTOPT1
 		ai_chance = {
 			factor = 50
 			modifier = {
 				factor = 2
-				army_strength = {
-					who = NAP
-					value = 0.50
-				}
 			}
 		}
-		FROM = {
-			if = {
-				limit = {
-					is_expanded_mod_active = { mod = subjects }
-				}
-				create_subject = {
-					subject_type = brother_kingdom
-					subject = ROOT
-				}
+		if = {
+			limit = {
+				has_heir = yes
 			}
-			else = {
-				create_union = ROOT
-			}
+			kill_heir = yes
 		}
+		define_ruler = {
+			name = "Toyotomi"
+			dynasty = "Hideyoshi"
+			adm = 4
+			dip = 6
+			mil = 5
+			age = 14
+			claim = 100
+			fixed = yes
+		}
+		set_ruler_flag = ODA_Toyotomi_ruling
 	}
 
 	option = {
-		name = ME_Naples_Events6.EVTOPT2
-
+		name = ME_Oda_Events3.EVTOPT2
 		ai_chance = {
 			factor = 50
 			modifier = {
-				factor = 0
-				is_subject = yes
-			}
-		}
-		add_casus_belli = {
-			type = cb_insult
-			target = FROM
-		}
-		FROM = {
-			add_casus_belli = {
-				type = cb_restore_personal_union
-				months = 300
-				target = ROOT
+				factor = 2
 			}
 		}
 	}
 }
 
-country_event = { #The Crown of Jerusalem
-	id = ME_Naples_Events.7
-	title = ME_Naples_Events.EVTNAME7
-	desc = ME_Naples_Events.EVTDESC7
+country_event = { # Oda Expansionism
+	id = ME_Oda_Events.4
+	title = ME_Oda_Events.EVTNAME4
+	desc = ME_Oda_Events.EVTDESC4
 	picture = HARBOUR_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
-		name = ME_Naples_Events7.EVTOPT1
+		name = ME_Oda_Events4.EVTOPT1
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 2
+			}
+		}
 		
+	}
+
+	option = {
+		name = ME_Oda_Events4.EVTOPT2
 		ai_chance = {
 			factor = 50
-		}
-		add_years_of_income = -1
-		palestine_area = {
-			limit = {
-				NOT = { 
-					owned_by = ROOT 
-				}
-			}
-			add_permanent_claim = ROOT
-		}
-		add_country_modifier = {
-			name = nap_defender_christianity
-			duration = -1
-		}
-		every_country = {
-			limit = {
-				religion = catholic
-			}
-			add_opinion = {
-				who = ROOT
-				modifier = nap_crown_himself
-			}
-		}
-	}
-	option = {
-		name = ME_Naples_Events7.EVTOPT2
-
-		ai_chance = {
-			factor = 50
-		}
-		if = {
-			limit = {
-				religion = catholic
-			}
-			add_papal_influence = 25
-		}
-		else_if = {
-			limit = {
-				religion = protestant
-			}
-			add_church_power = 100
-		}
-		if = {
-			limit = {
-				stability = 3
-			}
-			add_adm_power = 100
-		}
-		else_if = {
-			add_stability = 1
-		}
-		every_country = {
-			limit = {
-				religion = catholic
-			}
-			add_opinion = {
-				who = ROOT
-				modifier = nap_refuse_crown
-			}
-		}
-	}
-}
-
-country_event = {
-	id = ME_Naples_Events.8
-	title = ME_Naples_Events.EVTNAME8
-	desc = ME_Naples_Events.EVTDESC8
-	picture = HARBOUR_eventPicture
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = ME_Naples_Events8.EVTOPT1
-		ai_chance = {
-			factor = 100
-		}
-
-		ROOT = {
-			add_opinion = {
-				who = FROM
-				modifier = nap_helped_rebellion
-			}
-		}
-		FROM = {
-			add_opinion = {
-				who = ROOT
-				modifier = nap_helped_rebellion
-			}
-			add_opinion = {
-				who = ARA
-				modifier = nap_helped_rebellionAra
-			}
-		}
-		ARA = {
-			add_opinion = {
-				who = FROM
-				modifier = nap_helped_rebellionAra
-			}
-		}
-	}
-}
-
-country_event = {
-	id = ME_Naples_Events.9
-	title = ME_Naples_Events.EVTNAME9
-	desc = ME_Naples_Events.EVTDESC9
-	picture = HARBOUR_eventPicture
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = ME_Naples_Events9.EVTOPT1
-		ai_chance = {
-			factor = 100
-		}
-		ROOT = {
-			add_opinion = {
-				who = FROM
-				modifier = nap_helped_rebellion_war
-			}
-		}
-		FROM = {
-			add_opinion = {
-				who = ROOT
-				modifier = nap_helped_rebellion_war
-			}
-			add_opinion = {
-				who = ARA
-				modifier = nap_helped_rebellion_warAra
+			modifier = {
+				factor = 2
 			}
 		}	
-		ARA = {
-			add_opinion = {
-				who = FROM
-				modifier = nap_helped_rebellion_warAra
-			}
-		}
-	}
-}
-
-country_event = {
-	id = ME_Naples_Events.10
-	title = ME_Naples_Events.EVTNAME10
-	desc = ME_Naples_Events.EVTDESC10
-	picture = HARBOUR_eventPicture
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = ME_Naples_Events10.EVTOPT1
-		ai_chance = {
-			factor = 100
-		}
-		add_opinion = {
-			who = FROM
-			modifier = nap_denied_help
-		}
-		FROM = {
-			add_opinion = {
-				who = ROOT
-				modifier = nap_denied_help
-			}
-		}
-	}	
-}
-
-country_event = {
-	id = ME_Naples_Events.11
-	title = ME_Naples_Events.EVTNAME11
-	title = ME_Naples_Events.EVTDESC11
-	picture = COURT_eventPicture
-
-	fire_only_once = yes
-
-	trigger = {
-		tag = NAP
-		is_vassal = no
-		is_at_war = no
-		OR = {
-			has_country_flag = naples_france_helped_war
-			has_country_flag = naples_austria_helped_war
-			has_country_flag = naples_ottomans_helped_war
-		}
-	}
-
-	option = {
-		name = ME_Naples_Events11.EVTOPT1
-		ai_chance = {
-			factor = 50
-		}
-		if = { #if has chosen France help
-			limit = {
-				has_country_flag = naples_france_helped_war
-			}
-			if = {
-				limit = {
-					is_expanded_mod_active = { mod = subjects }
-				}
-				FRA = {
-					create_subject = {
-						subject_type = brother_kingdom
-						subject = ROOT
-					}
-				}
-			}
-			else = {
-				ROOT = {
-					kill_ruler = yes
-					set_dynasty = FRA
-				}
-				FRA = {
-					add_casus_belli = {
-						type = cb_restore_personal_union
-						months = 300
-						target = ROOT
-					}
-				}
-			}
-		}
-
-		else_if = { #if has chosen Austrian help
-			limit = {
-				has_country_flag = naples_austria_helped_war
-			}
-			HAB = {
-				if = {
-					limit = {
-						is_expanded_mod_active = { mod = subjects }
-					}
-					create_subject = {
-						subject_type = imperial_feud_subject
-						subject = ROOT
-					}
-				}
-				else = {
-					NAP = {
-						set_in_empire = yes 
-					}
-				}
-			}
-		}
-
-		else_if = { #if has chosen Ottoman help
-			limit = {
-				has_country_flag = naples_ottomans_helped_war
-			}
-			NAP = {
-				release = SIC
-			}
-			SIC = {
-				set_dynasty = NAP
-				change_government = monarchy
-				add_government_reform = feudalism_reform
-			}
-			TUR = {
-				if = {
-					limit = {
-						is_expanded_mod_active = { mod = subjects }
-					}
-					create_subject = {
-						subject_type = muslim_tributary_vassal
-						subject = SIC
-					}
-				}
-				else = { 
-					create_march = SIC 
-				}
-			}
-		}
-	}
-
-	option = {
-		name = ME_Naples_Events11.EVTOPT2
-		ai_chance = {
-			factor = 50
-		}
-		if = { #if has chosen France help
-			limit = {
-				has_country_flag = naples_france_helped_war
-			}
-			FRA = {
-				add_casus_belli = {
-					target = ROOT
-					type = cb_annex
-					months = 120
-				}
-			}
-		}
-
-		else_if = { #if has chosen Austrian help
-			limit = {
-				has_country_flag = naples_austria_helped_war
-			}
-			HAB = {
-				add_casus_belli = {
-					target = ROOT
-					type = cb_annex
-					months = 120
-				}
-			}
-		}
-
-		else_if = { #if has chosen Ottoman help
-			limit = {
-				has_country_flag = naples_ottomans_helped_war
-			}
-			TUR = {
-				add_casus_belli = {
-					target = ROOT
-					type = cb_annex
-					months = 120
-				}
-			}
-		}
-	}
-}
-
-country_event = {
-	id = ME_Naples_Events.12
-	title = ME_Naples_Events.EVTNAME12
-	title = ME_Naples_Events.EVTDESC12
-	picture = COURT_eventPicture
-
-	fire_only_once = yes
-
-	mean_time_to_happen = {
-		months = 1
-	}
-
-	trigger = {
-		tag = NAP
-		is_vassal = no
-		is_at_war = no
-	}
-
-	option = {
-		name = ME_Naples_Events12.EVTOPT1
-		ai_chance = {
-			factor = 100
-		}
-		add_prestige = 25
-		add_legitimacy = 25
-		set_country_flag = nap_coronated
 	}
 }

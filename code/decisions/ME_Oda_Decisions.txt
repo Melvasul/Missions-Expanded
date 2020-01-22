@@ -1,80 +1,27 @@
 country_decisions = {
-	epi_decision_kingdom_macedon = {
+	oda_decision_reform_samurai = {
 		major = yes
 		potential = {
-			tag = EPI
-			has_country_flag = epirus_allow_macedon
+			tag = ODA
 		}
 		allow = {
-			NOT = { exists = MAC }
-			has_country_flag = epirus_allow_macedon
+			mil = 5
+			manpower_percentage = 1
 		}
 		effect = {
-			add_prestige = 25
-			add_legitimacy = 15
-			every_province = {
-				limit = {
-					owned_by = EPI
-				}
-				add_core = MAC
-			}
 			if = {
 				limit = {
-					OR = {
-						NOT = { tag = EPI }
-						NOT = { was_never_end_game_tag_trigger = yes }
-					}
+					has_dlc = "Cradle of Civilization"
 				}
-				release = MAC
-				MAC = { change_primary_culture = ROOT }
-			}
-			if = {
-				limit = {
-					tag = EPI
-					was_never_end_game_tag_trigger = yes
-				}
-				change_tag = MAC
-				swap_non_generic_missions = yes
-				if = {
-					limit = { has_custom_ideas = no }
-					country_event = { id = ideagroups.1 } #Swap Ideas
+				add_country_modifier = {
+					name = oda_great_shock_CoC
+					duration = 9125
 				}
 			}
-			MAC = {
-				148 = { #Macedonia
-					move_capital_effect = yes
-				} 
-				change_religion = orthodox
-				if = {
-					limit = {
-						NOT = { government = monarchy }
-					}
-					change_government = monarchy
-					set_legacy_government = feudal_monarchy
-				}
-				if = {
-					limit = {
-						NOT = { government_rank = 2 }
-					}
-					set_government_rank = 2
-				}
-				remove_estate = estate_cossacks
-				set_country_flag = formed_macedon
-				define_ruler = {
-					name = "Alexander I The Great"
-					dynasty = "Argead"
-					adm = 5
-					dip = 4
-					mil = 6
-					age = 14
-					claim = 100
-					fixed = yes
-				}
-				if = {
-					limit = {
-						has_dlc = "Rights of Man"
-					}
-					add_ruler_personality = tolerant_personality
+			else = {
+				add_country_modifier = {
+					name = oda_great_shock
+					duration = 9125
 				}
 			}
 		}

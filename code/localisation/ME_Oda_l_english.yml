@@ -2,7 +2,7 @@
  #Mission
  #1st column
  ODA_wild_ginger_title: "The Wild Ginger"
- DA_wild_ginger_desc: "Relations with the Tokugawa clan have been ardous in the latest time, and we must decide, now, what we want to do with this Clan. Whether we choose to reinforce our relationship or view them as enemies, the time to decide is now, lest we allow ourselves to be caught off guard."
+ ODA_wild_ginger_desc: "Relations with the Tokugawa clan have been ardous in the latest time, and we must decide, now, what we want to do with this Clan. Whether we choose to reinforce our relationship or view them as enemies, the time to decide is now, lest we allow ourselves to be caught off guard."
  ODA_unite_chubu_title: "Uniting the Chubu"
  ODA_unite_chubu_desc: ""
  ODA_take_musashi_title: "Take Musashi"
@@ -40,10 +40,44 @@
  ODA_reign_estate_title: "Reign in the Estate"
  ODA_reign_estate_desc: ""
  #Modifiers
+ wild_ginger_allied: ""
+ wild_ginger_rival: ""
+ oda_thousand_sunny: "Sauzando Sani-go"
+ oda_tenshu: "Tenshu Castle Architecture"
+ oda_kuge: "Kuge Aristocracy"
+ oda_lion: "Shishi Sonson"
+ oda_demon_flash: "Asura: Makyusen"
+ oda_lion_march: "Shishi no Koshin"
+ ODA_blaze_dragon: "Kaen Ryuo"
+ oda_emperor_bond: "The Emperor's Bond"
+ oda_life_gate: "Rashomon"
+ oda_thousands_worlds: "Sanzen Sekai"
+ oda_crossroad: "Rokudo no Tsuji"
 
-
- #Events
+ oda_great_shock_CoC: "Daishinkan"
+ oda_great_shock: "Daishinkan"
  
+ #Events
+ ME_Oda_Events.EVTNAME1: "The Rise of Oda Nobunaga"
+ ME_Oda_Events.EVTDESC1: ""
+ ME_Oda_Events1.EVTOPT1: "People's dreams... Never end!"
+
+ ME_Oda_Events.EVTNAME2: "The Rise of Toyotomi Hideyoshi"
+ ME_Oda_Events.EVTDESC2: ""
+ ME_Oda_Events2.EVTOPT1: "A promising soldier, he should lead our armies"
+
+ ME_Oda_Events.EVTNAME3: "The Death of Nobunaga"
+ ME_Oda_Events.EVTDESC3: ""
+ ME_Oda_Events3.EVTOPT1: "Hideyoshi is the solely successor of Nobunaga"
+ ME_Oda_Events3.EVTOPT2: "We cannot allow a lowborn to guide our might"
+
+ ME_Oda_Events.EVTNAME4: "Oda Expansionism"
+ ME_Oda_Events.EVTDESC4: ""
+ ME_Oda_Events4.EVTOPT1: "We shall allow, my son"
+ ME_Oda_Events4.EVTOPT2: "You will stay at your place"
 
  #Decision
- 
+ oda_decision_reform_samurai_title: "Reforming the Samurai"
+ oda_decision_reform_samurai_desc: "The Samurai and their katana have defended our country against the greatest threat mankind has faced such as the Mongols, Nobunaga would be proud of the power we have gathered, let our enemies fear the shock of our warriors."
+ #Tooltip
+ ODA_has_more_development_than_daymios: "All the Daymios have less development than Oda"
