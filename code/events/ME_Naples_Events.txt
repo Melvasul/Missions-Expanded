@@ -4,7 +4,7 @@ country_event = { #The Fate of Naples
 	id = ME_Naples_Events.1
 	title = ME_Naples_Events.EVTNAME1
 	desc = ME_Naples_Events.EVTDESC1
-	picture = COURT_eventPicture
+	picture = CIVIL_WAR_eventPicture
 
 	is_triggered_only = yes
 
@@ -103,7 +103,7 @@ country_event = { # For France
 	id = ME_Naples_Events.2
 	title = ME_Naples_Events.EVTNAME2
 	desc = ME_Naples_Events.EVTDESC2
-	picture = HARBOUR_eventPicture
+	picture = CONQUEST_eventPicture
 
 	is_triggered_only = yes
 
@@ -199,7 +199,7 @@ country_event = { # For Austria
 	id = ME_Naples_Events.3
 	title = ME_Naples_Events.EVTNAME3
 	desc = ME_Naples_Events.EVTDESC3
-	picture = HARBOUR_eventPicture
+	picture = CONQUEST_eventPicture
 
 	is_triggered_only = yes
 
@@ -314,7 +314,7 @@ country_event = { # For the Ottomans
 	id = ME_Naples_Events.4
 	title = ME_Naples_Events.EVTNAME4
 	desc = ME_Naples_Events.EVTDESC4
-	picture = HARBOUR_eventPicture
+	picture = CONQUEST_eventPicture
 
 	is_triggered_only = yes
 
@@ -410,7 +410,7 @@ country_event = { #Restoring the Glory of Greece
 	id = ME_Naples_Events.5
 	title = ME_Naples_Events.EVTNAME5
 	desc = ME_Naples_Events.EVTDESC5
-	picture = HARBOUR_eventPicture
+	picture = DIPLOMACY_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -520,7 +520,7 @@ country_event = { #The Throne of Provence for Provence
 	id = ME_Naples_Events.6
 	title = ME_Naples_Events.EVTNAME6
 	desc = ME_Naples_Events.EVTDESC6
-	picture = HARBOUR_eventPicture
+	picture = COURT_eventPicture
 	
 	is_triggered_only = yes
 
@@ -581,7 +581,7 @@ country_event = { #The Crown of Jerusalem
 	id = ME_Naples_Events.7
 	title = ME_Naples_Events.EVTNAME7
 	desc = ME_Naples_Events.EVTDESC7
-	picture = HARBOUR_eventPicture
+	picture = GOOD_WITH_MONARCH_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -657,7 +657,7 @@ country_event = { #They'll fund our rebellion
 	id = ME_Naples_Events.8 
 	title = ME_Naples_Events.EVTNAME8
 	desc = ME_Naples_Events.EVTDESC8
-	picture = HARBOUR_eventPicture
+	picture = CORRUPTION_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -696,7 +696,7 @@ country_event = { #They'll help us with the war
 	id = ME_Naples_Events.9
 	title = ME_Naples_Events.EVTNAME9
 	desc = ME_Naples_Events.EVTDESC9
-	picture = HARBOUR_eventPicture
+	picture = BATTLE_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -734,7 +734,7 @@ country_event = { #They won't help us
 	id = ME_Naples_Events.10
 	title = ME_Naples_Events.EVTNAME10
 	desc = ME_Naples_Events.EVTDESC10
-	picture = HARBOUR_eventPicture
+	picture = ANGRY_MOB_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -760,7 +760,7 @@ country_event = { #Their demands
 	id = ME_Naples_Events.11
 	title = ME_Naples_Events.EVTNAME11
 	title = ME_Naples_Events.EVTDESC11
-	picture = COURT_eventPicture
+	picture = DIPLOMACY_eventPicture
 
 	fire_only_once = yes
 
@@ -911,7 +911,7 @@ country_event = { #Coronation Day
 	id = ME_Naples_Events.12
 	title = ME_Naples_Events.EVTNAME12
 	title = ME_Naples_Events.EVTDESC12
-	picture = COURT_eventPicture
+	picture = GOOD_WITH_MONARCH_eventPicture
 
 	fire_only_once = yes
 
@@ -956,9 +956,10 @@ country_event = { #A request from Naples
 	id = ME_Naples_Events.13
 	title = ME_Naples_Events.EVTNAME13
 	title = ME_Naples_Events.EVTDESC13
-	picture = COURT_eventPicture
+	picture = POPE_PREACHING_eventPicture
 
 	fire_only_once = yes
+	is_triggered_only = yes
 
 	mean_time_to_happen = {
 		months = 1
@@ -1029,7 +1030,7 @@ country_event = { #The bond with Naples for Hungary
 	id = ME_Naples_Events.14
 	title = ME_Naples_Events.EVTNAME14
 	desc = ME_Naples_Events.EVTDESC14
-	picture = HARBOUR_eventPicture
+	picture = COURT_eventPicture
 	
 	is_triggered_only = yes
 
