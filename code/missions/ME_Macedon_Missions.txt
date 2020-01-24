@@ -4,6 +4,7 @@ MAC_mission_1 = {
 	ai = yes
 	potential = {
 		tag = MAC
+		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 
@@ -59,6 +60,7 @@ MAC_mission_2 = {
 	ai = yes
 	potential = {
 		tag = MAC
+		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 
@@ -85,6 +87,7 @@ MAC_mission_3 = {
 	ai = yes
 	potential = {
 		tag = MAC
+		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 
@@ -215,6 +218,7 @@ MAC_mission_4 = {
 	ai = yes
 	potential = {
 		tag = MAC
+		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 
@@ -255,6 +259,7 @@ MAC_mission_5 = {
 	ai = yes
 	potential = {
 		tag = MAC
+		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 

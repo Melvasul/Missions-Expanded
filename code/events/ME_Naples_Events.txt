@@ -766,7 +766,7 @@ country_event = { #Their demands
 
 	trigger = {
 		tag = NAP
-		is_vassal = no
+		is_subject = no
 		is_at_war = no
 		OR = {
 			has_country_flag = naples_france_helped_war
@@ -921,7 +921,7 @@ country_event = { #Coronation Day
 
 	trigger = {
 		tag = NAP
-		is_vassal = no
+		is_subject = no
 		is_at_war = no
 	}
 
@@ -967,7 +967,7 @@ country_event = { #A request from Naples
 
 	trigger = {
 		tag = NAP
-		is_vassal = no
+		is_subject = no
 		is_at_war = no
 	}
 

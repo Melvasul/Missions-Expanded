@@ -4,6 +4,7 @@ EPI_mission_1 = {
 	ai = yes
 	potential = {
 		tag = EPI
+		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 
@@ -66,6 +67,7 @@ EPI_mission_1_ancient = {
 	potential = {
 		tag = EPI
 		has_country_flag = epirus_ancient_root
+		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 
@@ -199,6 +201,7 @@ EPI_mission_2 = {
 	ai = yes
 	potential = {
 		tag = EPI
+		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 
@@ -270,6 +273,7 @@ EPI_mission_2_ancient = {
 	potential = {
 		tag = EPI
 		has_country_flag = epirus_ancient_root
+		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 
@@ -422,6 +426,7 @@ EPI_mission_3 = {
 	ai = yes
 	potential = {
 		tag = EPI
+		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 
@@ -590,6 +595,7 @@ EPI_mission_3_despotate = {
 	potential = {
 		tag = EPI
 		has_country_flag = epirus_despotate_root
+		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 
@@ -627,6 +633,7 @@ EPI_mission_4 = {
 	ai = yes
 	potential = {
 		tag = EPI
+		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 
@@ -669,6 +676,7 @@ EPI_mission_4_despotate = {
 	potential = {
 		tag = EPI
 		has_country_flag = epirus_despotate_root
+		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 
@@ -831,6 +839,7 @@ EPI_mission_5 = {
 	ai = yes
 	potential = {
 		tag = EPI
+		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 
@@ -888,6 +897,7 @@ EPI_mission_5_despotate = {
 	potential = {
 		tag = EPI
 		has_country_flag = epirus_despotate_root
+		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 
