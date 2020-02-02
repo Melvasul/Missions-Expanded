@@ -25,6 +25,7 @@ naples_missions_1 = {
 			random_province = {
 				limit = {
 					owned_by = ROOT
+					has_cardinal = no
 				}
 				add_cardinal = yes
 			}
@@ -115,6 +116,7 @@ naples_missions_1 = {
 				125 = { #Palermo
 					if = {
 						owned_by = ROOT
+						has_cardinal = no
 					}
 					add_cardinal = yes
 				}
@@ -536,10 +538,23 @@ naples_missions_2 = {
 			add_navy_tradition = 10
 			add_mercantilism = 5
 			2983 = {
-				add_building_construction = {
-					building = shipyard
-					speed = 0.5
-					cost = 0
+				if = {
+					limit = {
+						has_building = shipyard
+					}
+					remove_building = shipyard
+					add_building_construction = {
+						building = grand_shipyard
+						speed = 0.5
+						cost = 0
+					}
+				}
+				else = {
+					add_building_construction = {
+						building = shipyard
+						speed = 0.5
+						cost = 0
+					}
 				}
 				add_province_modifier = {
 					name = nap_restore_republic
@@ -1021,10 +1036,23 @@ naples_missions_3 = {
 					name = nap_spyce_trade
 					duration = 7300
 				}
-				add_building_construction = {
-					building = grand_shipyard
-					speed = 0.75
-					cost = 0
+				if = {
+					limit = {
+						has_building = shipyard
+					}
+					remove_building = shipyard
+					add_building_construction = {
+						building = grand_shipyard
+						speed = 0.5
+						cost = 0
+					}
+				}
+				else = {
+					add_building_construction = {
+						building = shipyard
+						speed = 0.5
+						cost = 0
+					}
 				}
 				custom_tooltip = NAP_GALLEY_TOOLTIP
 				hidden_effect = {
@@ -1636,10 +1664,12 @@ naples_missions_5 = {
 						cost = 0
 					}
 				}
-				add_building_construction = {
-					building = courthouse
-					speed = 1
-					cost = 0
+				else = {
+					add_building_construction = {
+						building = courthouse
+						speed = 1
+						cost = 0
+					}
 				}
 			}
 		}

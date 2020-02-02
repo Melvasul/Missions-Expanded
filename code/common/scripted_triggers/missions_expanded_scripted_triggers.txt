@@ -202,6 +202,7 @@ country_gets_japanese_unique_missions = {
 		tag = ASK
 		tag = HSK
 		tag = JAP
+		tag = ODA
 		tag = RYU
 		tag = SMZ
 		tag = TKD
