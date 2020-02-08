@@ -109,16 +109,36 @@ naples_missions_1 = {
 					add_historical_friend = ROOT
 					country_event = {
 						id = ME_Naples_Events.13
-						months = 3
+						days = 90
 					}
 				}
 				add_historical_friend = PAP
 				125 = { #Palermo
 					if = {
-						owned_by = ROOT
-						has_cardinal = no
+						limit = {
+							owned_by = ROOT
+							has_cardinal = no
+						}
+						add_cardinal = yes
 					}
-					add_cardinal = yes
+					else_if = {
+						limit = {
+							has_building = temple
+						}
+						remove_building = temple
+						add_building_construction = {
+							building = cathedral
+							speed = 0.75
+							cost = 0
+						}
+					}
+					else = {
+						add_building_construction = {
+							building = temple
+							speed = 0.75
+							cost = 1
+						}
+					}
 				}
 				tuscany_area = {
 					limit = {
@@ -190,7 +210,7 @@ naples_missions_1 = {
 					owned_by = ROOT
 					province_has_center_of_trade_of_level = 1
 					any_trade_node_member_province = {
-						province_id = 112
+						province_id = 1308
 					}
 				}
 				num_of_owned_provinces_with = {
@@ -198,7 +218,7 @@ naples_missions_1 = {
 					owned_by = ROOT
 					has_port = yes
 					any_trade_node_member_province = {
-						province_id = 112
+						province_id = 1308
 					}
 				}
 			}
@@ -213,7 +233,9 @@ naples_missions_1 = {
 					}
 				}
 				add_base_production = 2
-				center_of_trade = 1
+				create_or_add_center_of_trade_level = {
+					level = 1
+				}
 			}
 			add_country_modifier = {
 				name = nap_dominating_adriatic
@@ -225,13 +247,13 @@ naples_missions_1 = {
 				}
 				add_casus_belli = {
 					type = cb_trade_war
-					months = 300
+					days = 9000
 					target = VEN
 				}
 			}
 			custom_tooltip = NAP_VENETIAN_GOODS_TOOLTIP
 			hidden_effect = {
-				112 = {
+				1308 = {
 					every_trade_node_member_province = {
 						limit = {
 							owned_by = VEN
@@ -330,7 +352,7 @@ naples_missions_1 = {
 						}
 					}
 					any_country = {
-						primary_culture = maghrebi
+						culture_group = maghrebi
 						NOT = { num_of_light_ship = ROOT }
 						341 = {
 							trade_share = {
@@ -366,7 +388,7 @@ naples_missions_1 = {
 				}
 				add_casus_belli = {
 					type = cb_trade_war
-					months = 300
+					days = 9000
 					target = TUN
 				}
 			}
@@ -379,7 +401,7 @@ naples_missions_1 = {
 				}
 				random_country = {
 					limit = {
-						primary_culture = maghrebi
+						culture_group = maghrebi
 						NOT = { num_of_light_ship = ROOT }
 						341 = {
 							trade_share = {
@@ -394,7 +416,7 @@ naples_missions_1 = {
 					}
 					add_casus_belli = {
 						type = cb_trade_war
-						months = 300
+						days = 9000
 						target = ROOT
 					}
 				}
@@ -605,7 +627,7 @@ naples_missions_2 = {
 				}
 				add_casus_belli = {
 					type = cb_trade_war
-					months = 300
+					days = 9000
 					target = ROOT
 				}
 			}
@@ -685,7 +707,7 @@ naples_missions_2 = {
 				}
 				add_casus_belli = {
 					type = cb_trade_war
-					months = 300
+					days = 9000
 					target = MAM
 				}
 			}
@@ -790,7 +812,7 @@ naples_missions_2 = {
 				PRO = {
 					country_event = {
 						id = ME_Naples_Events.6
-						months = 3
+						days = 90
 					}
 				}
 			}
@@ -842,12 +864,14 @@ naples_missions_2 = {
 				add_permanent_claim = ROOT
 			}
 			198 = {
-				limit = {
-					NOT = { 
-						owned_by = ROOT 
+				if = {
+					limit = {
+						NOT = { 
+							owned_by = ROOT 
+						}
 					}
+					add_permanent_claim = ROOT
 				}
-				add_permanent_claim = ROOT
 			}
 			every_province = {
 				limit = {
@@ -1138,7 +1162,7 @@ naples_missions_3 = {
 				}
 				add_casus_belli = {
 					type = cb_trade_war
-					months = 300
+					days = 9000
 					target = TUR
 				}
 			}
@@ -1536,7 +1560,7 @@ naples_missions_4 = {
 				HUN = {
 					country_event = {
 						id = ME_Naples_Events.14
-						months = 3
+						days = 90
 					}
 				}
 			}
