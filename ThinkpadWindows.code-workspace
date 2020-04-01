@@ -1,26 +1,10 @@
 {
-	"folders": [
-		{
-			"name": "Europa Universalis IV",
-			"path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Europa Universalis IV"
-		},
-		{
-			"name": "1349005102",
-			"path": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\236850\\1349005102"
-		},
-		{
-			"name": "Mission Expanded",
-			"path": "."
-		},
-		{
-			"path": "C:\\Users\\AlexI\\Documents\\Innocent-Eu4-mod"
-		},
-		{
-			"path": "C:\\Users\\AlexI\\Documents\\Oda"
-		},
-		{
-			"path": "C:\\Users\\AlexI\\Documents\\Paradox Interactive\\Europa Universalis IV\\mod"
-		}
-	],
-	"settings": {}
+    "folders": [
+        {
+            "path": "D:\\Programmi\\Steam\\steamapps\\common\\Europa Universalis IV"
+        },
+        {
+            "path": "C:\\Users\\AlexI\\Documents\\Paradox Interactive\\Europa Universalis IV\\mod\\missionsdevnext"
+        }
+    ]
 }
